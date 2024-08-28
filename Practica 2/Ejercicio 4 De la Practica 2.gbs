@@ -1,0 +1,64 @@
+program {
+    /*PROPOSITO: Dibuja una linea horizontal de azulejos que tienen guardas de colores negro, rojo y verde.
+    PRECONDICION: Tener al menos desde la celda inicial al menos 4 celdas hacia el este y que esten vacias, el cabezal comienza en la esquina suroeste del tablero y finaliza en la celda actual.
+    */
+    PonerGuardaDe5Azulejos()
+}
+procedure PonerGuardaDe5Azulejos() {
+    /*PROPOSITO: Arma una “guarda” horizontal de 5 azulejos conformado por los colores negro, rojo y verde.
+    PRECONDICION:Tener al menos desde la celda inicial al menos 4 celdas hacia el este y que esten vacias, el cabezal comienza en la esquina suroeste del tablero y finaliza en la celda actual.
+    */
+    ColocarAzulejo()
+    Mover(Este)
+    ColocarAzulejo()
+    Mover(Este)
+    ColocarAzulejo()
+    Mover(Este)
+    ColocarAzulejo()
+    Mover(Este)
+    ColocarAzulejo()
+}
+
+procedure ColocarAzulejo() {
+    /*PROPOSITO: Coloca en el tablero un azulejo conformado por los colores negro, rojo y verde.
+    PRECONDICION:Tener la celda vacia.
+    */
+    ArmarGuardaNegra()
+    ArmarGuardaRoja()
+    ArmarGuardaVerde()
+}
+
+procedure ArmarGuardaNegra() {
+    /*PROPOSITO: Arma una “guarda” con 5 bolitas de color negro.
+    PRECONDICION: Tener la celda vacia de bolitas negras.
+    */
+    Poner(Negro)
+    Poner(Negro)
+    Poner(Negro)
+    Poner(Negro)
+    Poner(Negro)
+}
+
+procedure ArmarGuardaRoja() {
+    /*PROPOSITO: Arma una “guarda” con 9 bolitas de color rojo.
+    PRECONDICION: Tener la celda vacia de bolitas rojas.
+    */
+    Poner(Rojo)
+    Poner(Rojo)
+    Poner(Rojo)
+    Poner(Rojo)
+    Poner(Rojo)
+    Poner(Rojo)
+    Poner(Rojo)
+    Poner(Rojo)
+    Poner(Rojo)
+}
+
+procedure ArmarGuardaVerde() {
+    /*PROPOSITO: Arma una “guarda” con 1 bolita de color verde.
+    PRECONDICION: Tener la celda vacia de bolitas verdes.
+    */
+    Poner(Verde)
+}
+
+

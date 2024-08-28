@@ -1,0 +1,16 @@
+program {
+    /*PROPOSITO: invoca a un procedimiento que mueve el cabezal tres posiciones al Norte de
+la actual.
+    PRECONDICION: Tener almenos 3 celdas hacia el norte.
+    */
+    Mover3VecesAlNorte()
+}
+procedure Mover3VecesAlNorte() {
+    /*PROPOSITO: mueve el cabezal tres posiciones al Norte de
+la actual.
+    PRECONDICION: Tener almenos 3 celdas hacia el norte.
+    */
+    repeat (3) {
+        Mover(Norte)
+    }
+}

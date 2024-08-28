@@ -1,0 +1,87 @@
+program {
+    DibujarRelojAnalógicoSimplificado()
+}
+
+procedure DibujarRelojAnalógicoSimplificado() {
+    /*PROPOSITO: Dibuja un reloj simplificado.
+    PRECONDICION: Tener al menos 2 celdas hacia el norte, 2 hacia el este, 2 hacia el sur y 2 hacia el oeste. la celdas deben estar vacias y el cabezal comienza en la celda del centro del tablero y termina el la misma celda del centro.
+    */
+    Dibujar12DelReloj()
+    Dibujar3DelReloj()
+    Dibujar6DelReloj()
+    Dibujar9DelReloj()
+}
+
+procedure Dibujar12DelReloj() {
+    /*PROPOSITO: Dibuja el 12 en el reloj simplificado.
+    PRECONDICION: Tener al menos 2 celdas hacia el norte. la celda debe estar vacia y el cabezal comienza en la celda del centro del tablero y termina el la misma celda del centro.
+    */
+    Mover(Norte)
+    Mover(Norte)
+    Poner(Rojo)
+    Poner(Rojo)
+    Poner(Rojo)
+    Poner(Rojo)
+    Poner(Rojo)
+    Poner(Rojo)
+    Poner(Rojo)
+    Poner(Rojo)
+    Poner(Rojo)
+    Poner(Rojo)
+    Poner(Rojo)
+    Poner(Rojo)
+    Mover(Sur)
+    Mover(Sur)
+    
+}
+
+procedure Dibujar3DelReloj() {
+    /*PROPOSITO: Dibuja el 3 en el reloj simplificado.
+    PRECONDICION: Tener al menos 2 celdas hacia el este. la celda debe estar vacia y el cabezal comienza en la celda del centro del tablero y termina el la misma celda del centro.
+    */
+    Mover(Este)
+    Mover(Este)
+    Poner(Rojo)
+    Poner(Rojo)
+    Poner(Rojo)
+    Mover(Oeste)
+    Mover(Oeste)
+    
+}
+
+procedure Dibujar6DelReloj() {
+    /*PROPOSITO: Dibuja el 6 en el reloj simplificado.
+    PRECONDICION: Tener al menos 2 celdas hacia el sur. la celda debe estar vacia y el cabezal comienza en la celda del centro del tablero y termina el la misma celda del centro.
+    */
+    Mover(Sur)
+    Mover(Sur)
+    Poner(Rojo)
+    Poner(Rojo)
+    Poner(Rojo)
+    Poner(Rojo)
+    Poner(Rojo)
+    Poner(Rojo)
+    Mover(Norte)
+    Mover(Norte)
+    
+}
+
+procedure Dibujar9DelReloj() {
+    /*PROPOSITO: Dibuja el 9 en el reloj simplificado.
+    PRECONDICION: Tener al menos 2 celdas hacia el sur. la celda debe estar vacia y el cabezal comienza en la celda del centro del tablero y termina el la misma celda del centro.
+    */
+    Mover(Oeste)
+    Mover(Oeste)
+    Poner(Rojo)
+    Poner(Rojo)
+    Poner(Rojo)
+    Poner(Rojo)
+    Poner(Rojo)
+    Poner(Rojo)
+    Poner(Rojo)
+    Poner(Rojo)
+    Poner(Rojo)
+    Mover(Este)
+    Mover(Este)
+    
+}

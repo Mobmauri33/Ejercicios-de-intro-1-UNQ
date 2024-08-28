@@ -1,0 +1,63 @@
+program {
+    PonerGuardaEnL()
+}
+procedure PonerGuardaEnL() {
+    /*PROPOSITO: Arma una guarda en L con bolitas de colores negras, rojas y verdes.
+    PRECONDICION: Desde la celda inicial tener al menos 2 celdas hacia el norte y 2 celas hacia el este, el cabezal comienza en el margen inferior izquierdo.
+    */
+    Mover(Norte)
+    Mover(Norte)
+    ColocarGuarda()
+    Mover(Sur)
+    ColocarGuarda()
+    Mover(Sur)
+    ColocarGuarda()
+    Mover(Este)
+    ColocarGuarda()
+    Mover(Este)
+    ColocarGuarda()
+    Mover(Oeste)
+    Mover(Oeste)
+}
+
+procedure ColocarGuarda() {
+    /*PROPOSITO: Coloca en el tablero una guarda conformada por los colores negro, rojo y verde.
+    PRECONDICION:Tener la celda vacia.
+    */
+    ArmarGuardaNegra()
+    ArmarGuardaRoja()
+    ArmarGuardaVerde()
+}
+
+procedure ArmarGuardaNegra() {
+    /*PROPOSITO: Arma una “guarda” con 5 bolitas de color negro.
+    PRECONDICION: Tener la celda vacia de bolitas negras.
+    */
+    Poner(Negro)
+    Poner(Negro)
+    Poner(Negro)
+    Poner(Negro)
+    Poner(Negro)
+}
+
+procedure ArmarGuardaRoja() {
+    /*PROPOSITO: Arma una “guarda” con 9 bolitas de color rojo.
+    PRECONDICION: Tener la celda vacia de bolitas rojas.
+    */
+    Poner(Rojo)
+    Poner(Rojo)
+    Poner(Rojo)
+    Poner(Rojo)
+    Poner(Rojo)
+    Poner(Rojo)
+    Poner(Rojo)
+    Poner(Rojo)
+    Poner(Rojo)
+}
+
+procedure ArmarGuardaVerde() {
+    /*PROPOSITO: Arma una “guarda” con 1 bolita de color verde.
+    PRECONDICION: Tener la celda vacia de bolitas verdes.
+    */
+    Poner(Verde)
+}

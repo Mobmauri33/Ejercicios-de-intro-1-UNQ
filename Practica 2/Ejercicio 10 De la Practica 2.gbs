@@ -1,0 +1,31 @@
+program {
+    ConstruirEscaleraAzulDe4Escalones()
+}
+
+procedure ConstruirEscaleraAzulDe4Escalones() {
+    /*PROPOSITO: construye una escalera hecha con bolitas azules.
+    PRECONDICION:la Celda donde comienza el cabezal debe estar vacia. Tener al menos tres celda vacias hacia el norte tambien cuatro hacia el este.
+    */
+    PonerEscalonAzul()
+    IrAlSiguienteEscalon()
+    PonerEscalonAzul()
+    IrAlSiguienteEscalon()
+    PonerEscalonAzul()
+    IrAlSiguienteEscalon()
+    PonerEscalonAzul()
+}
+
+
+procedure PonerEscalonAzul() {
+    /*PROPOSITO: coloca un escalon con bolitas azules.
+    PRECONDICION:la Celda donde comienza el cabezal debe estar vacia. Tener al menos una celda vacia tambien hacia el este.
+    */
+    Poner(Azul) Mover(Este) Poner(Azul)
+}
+
+procedure IrAlSiguienteEscalon() {
+    /*PROPOSITO: posiciona el cabezal para ir al siguiente escalon.
+    PRECONDICION:tiene que tener al menos una celda hacia el norte y el cabezal finaliza en la celda actual.
+    */
+    Mover(Norte)
+}

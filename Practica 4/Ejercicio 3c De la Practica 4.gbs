@@ -1,0 +1,16 @@
+program {
+    /*PROPOSITO: Invoca a un procedimiento que de la celda actual se posicione a una direccion dada y ponga dos bolitas del color dado.
+    PRECONDICION: Tener al menos una celda hacia la direccion dada de la celda actual.
+    */
+    Poner_Al_(Azul, Rojo, Norte)
+}
+procedure Poner_Al_(colorAPoner, colorAPoner2, direcciónDondePoner) {
+    /*PROPOSITO: posiciona el cabezal a una direccion dada y pone dos bolitas del color dado.
+    PRECONDICION:Tener al menos una celda hacia la direccion dada de la celda actual.
+    */
+    Mover(direcciónDondePoner)
+    Poner(colorAPoner)
+    Poner(colorAPoner2)
+}
+
+

@@ -1,0 +1,68 @@
+program {
+   /* PROPÓSITO: Dibuja un rectángulo de 5 celdas de ancho y 3
+celdas de alto. Desde la celda actual hacia el Este y hacia el Norte.
+PRECONDICIONES:-
+*/
+    DibujarRectanguloRojoYNegroDe5x3()
+}
+
+
+
+procedure DibujarRectanguloRojoYNegroDe5x3() {
+/*
+PROPÓSITO: Poner un rectángulo sólido de 5 celdas de ancho y 3
+celdas de alto. Desde la celda actual hacia el Este y hacia el Norte.
+PRECONDICIONES:
+* Hay al menos 4 celdas al Este y 2 celdas al Norte de la celda
+actual.
+* Las celdas contenidas en el rectángulo de 5x3 desde la celda
+actual hacia el Este y hacia el Norte están vacías.
+*/
+repeat (2) {
+DibujarLineaRojaYNegraDeTamaño5HaciaElEste()
+Mover(Norte)
+    }
+    DibujarLineaRojaYNegraDeTamaño5HaciaElEste()
+    Mover2VecesAlSur()
+}
+
+
+procedure DibujarLineaRojaYNegraDeTamaño5HaciaElEste() {
+    /*PROPOSITO: Dibuja una linea horizontal de puntos rojos y negro de 5 celdas.
+    Desde la celda actual hacia el este. El cabezal comienza y termina en la misma celda inicial.
+    PRECONDICIONES:
+    *Hay al menos 4 celdas al este y que esten vacias.
+    */
+    repeat (4) {
+    PonerUnaNegraYunaRoja()
+    Mover(Este)
+    }
+    PonerUnaNegraYunaRoja()
+    Mover4VecesAlOeste()
+}
+
+procedure PonerUnaNegraYunaRoja() {
+    /* PROPOSITO: Pone una Bolita Negra y Roja en la celda actual.
+    PRECONDICION: la Celda actual tiene que estar Vacia.
+    */
+    Poner(Rojo)
+    Poner(Negro)
+}
+
+procedure Mover4VecesAlOeste() {
+    /*PROPOSITO: Que el cabezal regrese a donde comenzo la linea de bolitas.
+    PRECONDICION: Debe haber al menos 4 celdas hacia el Oeste.
+    */
+    repeat (4) {
+    Mover(Oeste)
+    }
+}
+
+procedure Mover2VecesAlSur() {
+    /*PROPOSITO: Posicionar el cabezal al comienzo del programa.
+    PRECONDICION: Debe haber al menos 2 celdas hacia el Sur.
+    */
+    repeat (2) {
+    Mover(Sur)
+    }
+}

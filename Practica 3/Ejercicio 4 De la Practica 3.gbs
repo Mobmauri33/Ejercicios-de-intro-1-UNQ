@@ -1,0 +1,15 @@
+program {
+    /*PROPOSITO: invoca a un procedimiento que pone 6 bolitas de color Verde en la celda actual.
+    PRECONDICION:-.
+    */
+    Poner6DeColorVerde()
+}
+procedure Poner6DeColorVerde() {
+    /*PROPOSITO: pone 6 bolitas de color Verde en la celda
+actual.
+    PRECONDICION:-.
+    */
+    repeat (6) {
+        Poner(Verde)
+    }
+}

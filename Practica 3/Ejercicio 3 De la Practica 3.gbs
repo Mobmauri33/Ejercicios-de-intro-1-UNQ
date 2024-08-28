@@ -1,0 +1,15 @@
+program {
+    /*PROPOSITO: invoca a un procedimiento que pone 6 bolitas de color Negro en la celda actual.
+    PRECONDICION:-.
+    */
+    Poner6DeColorNegro()
+}
+procedure Poner6DeColorNegro() {
+    /*PROPOSITO: pone 6 bolitas de color Negro en la celda
+actual.
+    PRECONDICION:-.
+    */
+    repeat (6) {
+        Poner(Negro)
+    }
+}

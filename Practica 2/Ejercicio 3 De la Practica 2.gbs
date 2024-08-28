@@ -1,0 +1,70 @@
+program {
+    /*PROPOSITO: Dibuja un cuadrado solido de 4x4 celdas y cada celda que tenga una bolita de cada color.
+    PRECONDICION:Desde la celda inicial tener al menos 3 celdas hacia el este y 3 hacia el norte.
+    Cada celda debe estar vacia y el cabezal debe volver a la celda inicial.
+    */
+    DibujarCuadradoMulticolorDeLado4()
+}
+
+
+
+
+
+procedure PonerUnaDeCada() {
+    /*PROPOSITO: pone una bolita de cada color en la celda actual.
+    PRECONDICION: la celda actual debe estar vacia.
+    */
+    Poner(Azul)
+    Poner(Negro)
+    Poner(Rojo)
+    Poner(Verde)
+}
+
+procedure Mover3VecesAlOeste() {
+    /*PROPOSITO: mueve el cabezal 3 celdas hacia el Oeste.
+    PRECONDICION: debe haber al menos 3 celas hacia el Oeste.
+    */
+    Mover(Oeste)
+    Mover(Oeste)
+    Mover(Oeste)
+}
+
+
+procedure DibujarLineaMulticolorDeLargo4() {
+    /*PROPOSITO: Dibuja linea multicolor de 4 celdas hacia el este.
+    PRECONDICION: Debe haber al menos 3 celdas hacia el este.
+    las celdas deben estar vacias.
+    El cabezal debe quedar en la celda inicial.
+    */
+    PonerUnaDeCada()
+    Mover(Este)
+    PonerUnaDeCada()
+    Mover(Este)
+    PonerUnaDeCada()
+    Mover(Este)
+    PonerUnaDeCada()
+    Mover3VecesAlOeste()
+}
+
+procedure DibujarCuadradoMulticolorDeLado4() {
+    /*PROPOSITO: Dibuja un cuadrado solido de 4x4 celdas y cada celda que tenga una bolita de cada color.
+    PRECONDICION:Cada celda debe estar vacia y el cabezal debe volver a la celda inicial.
+    */
+    DibujarLineaMulticolorDeLargo4()
+    Mover(Norte)
+    DibujarLineaMulticolorDeLargo4()
+    Mover(Norte)
+    DibujarLineaMulticolorDeLargo4()
+    Mover(Norte)
+    DibujarLineaMulticolorDeLargo4()
+    VolverALaCeldaInicial()
+}
+
+procedure VolverALaCeldaInicial() {
+    /*PROPOSITO: mueve el cabezal a la celda inicial del programa.
+    PRECONDICION: Tener al menos 3 celdas hacia el sur.
+    */
+    Mover(Sur)
+    Mover(Sur)
+    Mover(Sur)
+}

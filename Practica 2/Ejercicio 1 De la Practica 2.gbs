@@ -1,0 +1,146 @@
+program {
+    /*PROPOSITO:un programa que ponga sus iniciales en el tablero usando bolitas color Verde para los nombres y color Rojo para el apellido.
+    PRECONDICION: El tablero deber ser minimamente de 16x5, sino el programa no funcionara. y las celdas deben estar vacias.
+    */
+    EscribirInicialesMER()
+}
+procedure EscribirInicialesMER() {
+    /*PROPOSITO: Dibujar Iniciales propias con bolitas verdes.
+    PRECONDICION: Desde la celda inicial debe haber 4 celdas hacia el norte y 10 celdas hacia el este, las celdas tambien tienen que estar vacias. el cabeza finaliza en la celda actual.
+    */
+    EscribirIncialM()
+    IrALaSiguienteInicial()
+    EscribirIncialE()
+    IrALaSiguienteInicial()
+    EscribirIncialR()
+    
+}
+
+procedure EscribirIncialM() {
+    /*PROPOSITO: dibuja una inicial de nombre con la letra M formada por bolitas verdes.
+    PRECONDICION: Debe tener al menos 4 celdas hacia el norte y 4 celdas hacia el este, el cabezal comienza a dibujar desde la celda lindante este del margen inferior izquierdo y finaliza en la celda actual.
+    */
+    IrAlBorde(Sur)
+    IrAlBorde(Oeste)
+    Mover(Este)
+    Poner(Verde)
+    Mover(Norte)
+    Poner(Verde)
+    Mover(Norte)
+    Poner(Verde)
+    Mover(Norte)
+    Poner(Verde)
+    Mover(Norte)
+    Poner(Verde)
+    Mover(Este)
+    Mover(Sur)
+    Poner(Verde)
+    Mover(Este)
+    Poner(Verde)
+    Mover(Norte)
+    Mover(Este)
+    Poner(Verde)
+    Mover(Sur)
+    Poner(Verde)
+    Mover(Sur)
+    Poner(Verde)
+    Mover(Sur)
+    Poner(Verde)
+    Mover(Sur)
+    Poner(Verde)
+}
+
+procedure IrALaSiguienteInicial() {
+    /*PROPOSITO: se posicionara 2 celdas hacia el este para poder dibujar la siguiente inicial
+    PRECONDICION: Tener al menos 2 celdas hacia el este y que esten vacias.
+    */
+    Mover(Este)
+    Mover(Este)
+}
+
+procedure EscribirIncialE() {
+    /*PROPOSITO: dibuja una inicial de nombre con la letra E formada por bolitas verdes.
+    PRECONDICION: Debe tener al menos 4 celdas hacia el norte y 4 celdas hacia el este, el cabezal comienza a dibujar desde la celda actual y termina en la misma.
+    */
+    
+    Mover(Norte)
+    Mover(Norte)
+    Mover(Norte)
+    Mover(Norte)
+    Mover(Este)
+    Mover(Este)
+    Mover(Este)
+    Poner(Verde)
+    Mover(Oeste)
+    Poner(Verde)
+    Mover(Oeste)
+    Poner(Verde)
+    Mover(Oeste)
+    Poner(Verde)
+    Mover(Sur)
+    Poner(Verde)
+    Mover(Sur)
+    Mover(Este)
+    Mover(Este)
+    Mover(Este)
+    Poner(Verde)
+    Mover(Oeste)
+    Poner(Verde)
+    Mover(Oeste)
+    Poner(Verde)
+    Mover(Oeste)
+    Poner(Verde)
+    Mover(Sur)
+    Poner(Verde)
+    Mover(Sur)
+    Mover(Este)
+    Mover(Este)
+    Mover(Este)
+    Poner(Verde)
+    Mover(Oeste)
+    Poner(Verde)
+    Mover(Oeste)
+    Poner(Verde)
+    Mover(Oeste)
+    Poner(Verde)
+    Mover(Este)
+    Mover(Este)
+    Mover(Este)
+    }
+    
+    procedure EscribirIncialR() {
+    /*PROPOSITO: dibuja una inicial de nombre con la letra R formada por bolitas rojas.
+    PRECONDICION: Debe tener al menos 4 celdas hacia el norte y 3 celdas hacia el este, el cabezal comienza a dibujar desde la celda actual y termina en la misma.
+    */
+    Poner(Rojo)
+    Mover(Norte)
+    Poner(Rojo)
+    Mover(Norte)
+    Poner(Rojo)
+    Mover(Norte)
+    Poner(Rojo)
+    Mover(Norte)
+    Poner(Rojo)
+    Mover(Este)
+    Poner(Rojo)
+    Mover(Este)
+    Poner(Rojo)
+    Mover(Este)
+    Poner(Rojo)
+    Mover(Sur)
+    Poner(Rojo)
+    Mover(Sur)
+    Poner(Rojo)
+    Mover(Oeste)
+    Poner(Rojo)
+    Mover(Oeste)
+    Poner(Rojo)
+    Mover(Este)
+    Mover(Sur)
+    Poner(Rojo)
+    Mover(Este)
+    Mover(Sur)
+    Poner(Rojo)
+    IrAlBorde(Oeste)
+    Mover(Este)
+    }

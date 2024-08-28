@@ -1,0 +1,63 @@
+procedure PonerUnaSemilla() {
+    /*PROPOSITO: Pone una semilla.
+    PRECONDICIONES: -
+    *Cada semilla esta representada por una bolita roja.
+    */
+    Poner(Rojo)
+}
+
+procedure PonerUnÁrbol() {
+    /*PROPOSITO: Pone un arbol.
+    PRECONDICIONES: -
+    *Cada arbol esta representado por una bolita verde.
+    */
+    Poner(Verde)
+}
+
+procedure PonerUnaBomba() {
+    /*PROPOSITO: Pone una bomba.
+    PRECONDICIONES: -
+    *Cada bomba esta representado por una bolita negra.
+    */
+    Poner(Negro)
+}
+
+procedure PonerUnNutriente() {
+    /*PROPOSITO: Pone un nutriente.
+    PRECONDICIONES: -
+    *Cada unidad de nutrientes esta representado por una bolita azul.
+    */
+    Poner(Azul)
+}
+
+procedure SacarUnaSemilla() {
+    /*PROPOSITO: Saca una semilla.
+    PRECONDICIONES: -
+    *Cada semilla esta representada por una bolita roja.
+    */
+    Sacar(Rojo)
+}
+
+procedure SacarUnÁrbol() {
+    /*PROPOSITO: Saca un arbol.
+    PRECONDICIONES: -
+    *Cada arbol esta representado por una bolita verde.
+    */
+    Sacar(Verde)
+}
+
+procedure SacarUnaBomba() {
+    /*PROPOSITO: Saca una bomba.
+    PRECONDICIONES: -
+    *Cada bomba esta representado por una bolita negra.
+    */
+    Sacar(Negro)
+}
+
+procedure SacarUnNutriente() {
+    /*PROPOSITO: Saca un nutriente.
+    PRECONDICIONES: -
+    *Cada unidad de nutrientes esta representado por una bolita azul.
+    */
+    Sacar(Azul)
+}

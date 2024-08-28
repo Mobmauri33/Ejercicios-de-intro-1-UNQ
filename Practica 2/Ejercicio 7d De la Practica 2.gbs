@@ -1,0 +1,161 @@
+program {
+    DibujarPiramideGigante()
+}
+procedure DibujarBase() {
+    /*PROPOSITO: Dibuja una base de piramide de 5 celdas de lado.
+    PRECONDICIONES: 
+    *La celda actual debe estar vacia.
+    *Debe haber cuatro celdas vacias al este del cabezal.
+    */
+    
+    Poner(Verde)
+    Mover(Este)
+    Poner(Verde)
+    Mover(Este)
+    Poner(Verde)
+    Mover(Este)
+    Poner(Verde)
+    Mover(Este)
+    Poner(Verde)
+    Mover(Oeste)
+    Mover(Oeste)
+    Mover(Oeste)
+    Mover(Oeste)
+}
+
+procedure DibujarMedio() {
+    /*PROPOSITO: Dibuja un sector del medio de piramide de 3 celdas de lado.
+    PRECONDICIONES:
+    *La celda actual debe estar vacia.
+    *Debe haber dos celdas vacias al este del cabezal.
+    */
+    Poner(Verde)
+    Mover(Este)
+    Poner(Verde)
+    Mover(Este)
+    Poner(Verde)
+    Mover(Oeste)
+    Mover(Oeste)
+}
+
+procedure DibujarPunta() {
+    /*PROPOSITO: Dibuja una punta de piramide.
+    PRECONDICIONES:
+    *La celda actual debe estar vacia.
+    */
+    Poner(Verde)
+}
+
+procedure IrALaSiguienteParteDeLaPiramide() {
+    /*PROPOSITO:Traslada el cabezal a la siguiente parte de la piramide.
+    PRECONDICIONES: Debe haber una celda hacia el norte y una hacia el este.
+    */
+    Mover(Norte)
+    Mover(Este)
+}
+
+procedure DibujarPiramide() {
+    /*PROPOSITO: Dibuja una piramide con bolitas verdes.
+    PRECONDICIONES:*Tener al menos 2 celdas hacia el norte, y 4 celdas hacia el este, el cabezal comienza en el margen inferior izquierdo y termina en la celda actual.
+    */
+    DibujarBase()
+    IrALaSiguienteParteDeLaPiramide()
+    DibujarMedio()
+    IrALaSiguienteParteDeLaPiramide()
+    DibujarPunta()
+}
+
+procedure DibujarPiramideInvertida() {
+    /*PROPOSITO: Dibuja una piramide invertida con bolitas verdes.
+    PRECONDICIONES:*Tener al menos 2 celdas hacia el norte, y 4 celdas hacia el este, el cabezal comienza en el margen inferior izquierdo y termina en la celda actual.
+    */
+    //IrALaBaseInvertidaDeLaPiramide()
+    DibujarBase()
+    IrALaSiguienteParteDeLaPiramideInvertida()
+    DibujarMedio()
+    IrALaSiguienteParteDeLaPiramideInvertida()
+    DibujarPunta()
+}
+
+procedure IrALaBaseInvertidaDeLaPiramide() {
+    /*PROPOSITO:Traslada el cabezal a la base invertida de la piramide.
+    PRECONDICIONES: Debe haber dos celdas hacia el norte.
+    */
+    Mover(Norte)
+    Mover(Norte)
+}
+
+procedure IrALaSiguienteParteDeLaPiramideInvertida() {
+    /*PROPOSITO:Traslada el cabezal a la siguiente parte de la piramide invertida.
+    PRECONDICIONES: Debe haber una celda hacia el sur y una hacia el este.
+    */
+    Mover(Sur)
+    Mover(Este)
+}
+
+procedure DibujarPiramideEstiradaALoAlto() {
+    /*PROPOSITO: Dibuja una piramide estirada a lo alto con bolitas verdes.
+    PRECONDICIONES:*Tener al menos 5 celdas hacia el norte, y 4 celdas hacia el este, el cabezal comienza en el margen inferior izquierdo y termina en la celda actual.
+    */
+    IrAlBorde(Sur)
+    IrAlBorde(Oeste)
+    DibujarBase()
+    Mover(Norte)
+    DibujarBase()
+    IrALaSiguienteParteDeLaPiramide()
+    DibujarMedio()
+    Mover(Norte)
+    DibujarMedio()
+    IrALaSiguienteParteDeLaPiramide()
+    DibujarPunta()
+    Mover(Norte)
+    DibujarPunta()
+}
+
+procedure DibujarPiramideGigante() {
+    /*PROPOSITO: Dibuja una piramide gigante con bolitas verdes.
+    PRECONDICIONES:*Tener al menos 2 celdas hacia el norte, y 4 celdas hacia el este, el cabezal comienza en el margen inferior izquierdo y termina en la celda actual.
+    */
+    DibujarPiramide()
+    PasarALaSiguientePiramide()
+    DibujarPiramide()
+    PasarALaPiramideInvertida()
+    DibujarPiramideInvertida()
+    PasarALaUltimapiramide()
+    DibujarPiramide()
+}
+
+procedure PasarALaSiguientePiramide() {
+    /*PROPOSITO: El cabezal se traslada para dibujar la siguiente piramide.
+    PRECONDICIONES:*Tener al menos 2 celdas hacia el sur, y 4 celdas hacia el este, el cabezal comienza en la celda actual y termina en el mismo.
+    */
+    Mover(Sur)
+    Mover(Sur)
+    Mover(Este)
+    Mover(Este)
+    Mover(Este)
+    Mover(Este)
+}
+
+procedure PasarALaPiramideInvertida() {
+    /*PROPOSITO: El cabezal se traslada para dibujar la siguiente piramide que es invertida.
+    PRECONDICIONES:*Tener al menos 5 celdas hacia el oeste, y 2 celdas hacia el sur, el cabezal comienza en la celda actual y termina en el mismo.
+    */
+    Mover(Oeste)
+    Mover(Oeste)
+    Mover(Oeste)
+    Mover(Oeste)
+    Mover(Oeste)
+}
+
+
+procedure PasarALaUltimapiramide() {
+    /*PROPOSITO:El cabezal se traslada para dibujar la ultima piramide.
+    PRECONDICIONES:*Tener al menos 5 celdas hacia el norte, y 2 celdas hacia el oeste y 2 hacia el este, el cabezal comienza en la celda actual y termina en el mismo.
+    */
+    Mover(Norte)
+    Mover(Norte)
+    Mover(Norte)
+    Mover(Oeste)
+    Mover(Oeste)
+}
