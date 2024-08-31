@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 program {
     /*PROPOSITO: El programa llama a un procedimiento llamado Poner_ADistancia3Al_ que pone una bolita en el tablero del color dado a una distancia de 3 celdas hacia una direccion dada.
     tambien la procedimiento llamado Mover3VecesAL_ que mueve el cabezal 3 veces hacia la direccion dada.
@@ -32,3 +33,39 @@ procedure Mover3VecesAl_(direccion) {
         Mover(direccion)
     }
 }
+=======
+program {
+    /*PROPOSITO: El programa llama a un procedimiento llamado Poner_ADistancia3Al_ que pone una bolita en el tablero del color dado a una distancia de 3 celdas hacia una direccion dada.
+    tambien la procedimiento llamado Mover3VecesAL_ que mueve el cabezal 3 veces hacia la direccion dada.
+    PRECONDICION: Tener al menos 3 celdas hacia la direccion norte, la direccion este, la direccion sur y la direccion oeste.
+    */
+    Poner_ADistancia3Al_(Azul, Este)
+    Poner_ADistancia3Al_(Azul, Este)
+    Mover3VecesAl_(Oeste)
+    Mover3VecesAl_(Oeste)
+}
+procedure Pintar3PuntosAzules() {
+    /*PROPOSITO: Pone en la celda actual 3 bolitas de color azul.
+    PRECONDICION:-
+    */
+    repeat (3) {
+    Poner(Azul)
+    }
+}
+procedure Poner_ADistancia3Al_(color , direccion ) {
+     /*
+     PROPOSITO: Pone una bolita en el tablero del color dado a una distancia de 3 celdas hacia una direccion dada.
+    PRECONDICION: Tener al menos 3 celdas hacia la direccion norte, la direccion este, la direccion sur y la direccion oeste.
+    */
+    Mover3VecesAl_(direccion)
+    Poner(color)
+}
+procedure Mover3VecesAl_(direccion) {
+    /*PROPOSITO: Mueve el cabezal 3 celdas hacia la direccion dada.
+    PRECONDICION: Tener al menos 3 celdas hacia la direccion norte, la direccion este, la direccion sur y la direccion oeste.
+    */
+    repeat (3) {
+        Mover(direccion)
+    }
+}
+>>>>>>> a86025927f717aaaa16b7530a67f60d6ef4368a4
