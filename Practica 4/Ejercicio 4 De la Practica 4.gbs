@@ -1,0 +1,17 @@
+program {
+    /*PROPOSITO: El programa llama a un procedimiento que reemplaza en el tablero una bolita del primer color dado por una del segundo color dado.
+    PRECONDICION: Tener en la celda actual una bolita que sacar del color dado.
+    Que la celda no este vacia.
+    */
+    ReemplazarUnaDe_Por_(Azul, Verde)
+}
+
+procedure ReemplazarUnaDe_Por_(colorAReemplazar, colorPorElCualReemplazar) {
+    /*PROPOSITO: Reemplaza una bolita del primer color dado por una del segundo color dado.
+    PRECONDICION: Tener en la celda actual una bolita que sacar del color dado.
+    Que la celda no este vacia.
+    */
+    
+    Sacar(colorAReemplazar)
+    Poner(colorPorElCualReemplazar)
+}

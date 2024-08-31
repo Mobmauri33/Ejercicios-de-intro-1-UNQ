@@ -1,0 +1,16 @@
+program {
+    /*PROPOSITO: El programa llama a un procedimiento de nombre Mover_VecesAl_(cantidadAMover, direcciónAMover) que dado un número **cantidadAMover** y una dirección **direcciónAMover** mueva el cabezal tantas veces como la dada en dicha dirección.El cabezal termina en la celda actual del tablero.
+    PRECONDICION:Tener la cantidad de Celdas dadas en la direccion dada.
+    */
+    Mover_VecesAl_(3, Norte)
+}
+
+procedure Mover_VecesAl_(cantidadAMover, direcciónAMover) {
+    /*PROPOSITO: dado un número cantidadAMover y una dirección direcciónAMover mueva el
+ cabezal tantas veces como la dada en dicha dirección.
+    PRECONDICION: Tener la cantidad de Celdas dadas en la direccion dada.
+    */
+    repeat(cantidadAMover) {
+    Mover(direcciónAMover)
+    }
+}

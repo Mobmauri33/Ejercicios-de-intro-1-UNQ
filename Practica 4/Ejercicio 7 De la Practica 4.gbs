@@ -1,0 +1,41 @@
+program {
+    /*PROPOSITO: El programa dibuja un arco iris en el tablero llamando al procedimiento PintarArcoIris que pone en el tablero bolitas de colores negro, verde, azul y rojo para formar un arcoiris.
+    PRECONDICION: Tener un celda hacia la direccion norte, y 8 celdas hacia la direccion este.
+    */
+    repeat (2){
+    PintarArcoIris(Negro, Azul, Verde, Rojo)
+    Mover(Este)
+    }
+    PintarArcoIris(Negro, Azul, Verde, Rojo)
+}
+
+procedure PintarArcoIris(color1, color2, color3, color4) {
+    /*PROPOSITO: Pone en el tablero bolitas de colores negro, verde, azul y rojo para formar un arcoiris.
+    PRECONDICION: Tener un celda hacia la direccion norte, y 8 celdas hacia la direccion este.
+    */
+    PintarLineaDeArcoIris(color1)
+    Mover(Este)
+    PintarLineaDeArcoIris(color2)
+    Mover(Norte)
+    PintarLineaDeArcoIris(color3)
+    Mover(Sur)
+    Mover(Este)
+    PintarLineaDeArcoIris(color4)
+}
+
+procedure PintarLineaDeArcoIris(color) {
+    /*PROPOSITO: Pone en el tablero bolitas de color color dado para formar una linea de ese color.
+    PRECONDICION: Tener un celda hacia la direccion norte, y 8 celdas hacia la direccion este.
+    */
+        Pintar3Puntos_(color)
+}
+
+
+procedure Pintar3Puntos_(color) {
+    /*PROPOSITO: Pone en la celda actual 3 bolitas de color dado.
+    PRECONDICION:-
+    */
+    repeat (3) {
+    Poner(color)
+    }
+}

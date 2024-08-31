@@ -1,0 +1,15 @@
+program {
+    /*PROPOSITO: El programa llama a un procedimiento de nombre Poner_DeColorRojo(cantidadAPoner) que dado un número **cantidadAPoner**, pone tantas bolitas como se indica de color Rojo en la celda actual.
+    PRECONDICION:-
+    */
+    Poner_DeColorRojo(50)
+}
+
+procedure Poner_DeColorRojo(cantidadAPoner) {
+    /*PROPOSITO: dado un número **cantidadAPoner**, pone tantas bolitas como se indica de color Rojo en la celda actual.
+    PRECONDICION:-
+    */
+    repeat(cantidadAPoner) {
+    Poner(Rojo)
+    }
+}
