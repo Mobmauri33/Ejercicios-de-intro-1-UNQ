@@ -1,0 +1,99 @@
+program {
+    Sacar_Árboles(19)
+}
+
+procedure Poner_Semillas(cantidadDeSemillasAPoner) {
+    /*PROPOSITO: Pone una cantidad dada de semillas.
+    PRECONDICIONES: -
+    OBSERVACIONES:
+    *Cada semilla esta representada por una bolita roja.
+    PARAMETROS:cantidadDeSemillasAPoner - Numero - cantidad de bolitas rojas a poner.
+    */
+    repeat (cantidadDeSemillasAPoner) {
+    Poner(Rojo)
+    }
+}
+
+procedure Poner_Árboles(cantidadDeÁrbolesAPoner) {
+    /*PROPOSITO: Pone una cantidad dada de Árboles.
+    PRECONDICIONES: -
+    OBSERVACIONES:
+    *Cada árbol esta representado por una bolita verde.
+    PARAMETROS:cantidadDeÁrbolesAPoner - Numero - cantidad de bolitas verdes a poner.
+    */
+    repeat (cantidadDeÁrbolesAPoner) {
+    Poner(Verde)
+    }
+}
+
+procedure Poner_Bombas(cantidadDeBombasAPoner) {
+    /*PROPOSITO: Pone una cantidad dada de Bombas.
+    PRECONDICIONES: -
+    OBSERVACIONES:
+    *Cada bomba esta representada por una bolita negra.
+    PARAMETROS:cantidadDeBombasAPoner - Numero - cantidad de bolitas negras a poner.
+    */
+    repeat (cantidadDeBombasAPoner) {
+    Poner(Negro)
+    }
+}
+
+procedure Poner_Nutrientes(cantidadDeNutrientesAPoner) {
+    /*PROPOSITO: Pone una cantidad dada de Nutrientes.
+    PRECONDICIONES: -
+    OBSERVACIONES:
+    *Cada nutriente esta representado por una bolita azul.
+    PARAMETROS:cantidadDeNutrientesAPoner - Numero - cantidad de bolitas azules a poner.
+    */
+    repeat (cantidadDeNutrientesAPoner) {
+    Poner(Azul)
+    }
+}
+
+procedure Sacar_Semillas(cantidadDeSemillasASacar) {
+    /*PROPOSITO: Saca una cantidad dada de semillas.
+    PRECONDICIONES: -
+    OBSERVACIONES:
+    *Cada semilla esta representada por una bolita roja.
+    PARAMETROS:cantidadDeSemillasASacar - Numero - cantidad de bolitas rojas a sacar.
+    */
+    repeat (cantidadDeSemillasASacar) {
+    Sacar(Rojo)
+    }
+}
+
+procedure Sacar_Árboles(cantidadDeÁrbolesASacar) {
+    /*PROPOSITO: Saca una cantidad dada de Árboles.
+    PRECONDICIONES: -
+    OBSERVACIONES:
+    *Cada árbol esta representado por una bolita verde.
+    PARAMETROS:cantidadDeÁrbolesASacar - Numero - cantidad de bolitas verdes a sacar.
+    */
+    repeat (cantidadDeÁrbolesASacar) {
+    Sacar(Verde)
+    }
+}
+
+procedure Sacar_Bombas(cantidadDeBombasASacar) {
+    /*PROPOSITO: Saca una cantidad dada de Bombas.
+    PRECONDICIONES: -
+    OBSERVACIONES:
+    *Cada bomba esta representada por una bolita negra.
+    PARAMETROS:cantidadDeBombasASacar - Numero - cantidad de bolitas negras a sacar.
+    */
+    repeat (cantidadDeBombasASacar) {
+    Sacar(Negro)
+    }
+}
+
+procedure  Sacar_Nutrientes(cantidadDeNutrientesASacar) {
+    /*PROPOSITO: Saca una cantidad dada de Nutrientes.
+    PRECONDICIONES: -
+    OBSERVACIONES:
+    *Cada nutriente esta representado por una bolita azul.
+    PARAMETROS:cantidadDeNutrientesASacar - Numero - cantidad de bolitas azules a sacar.
+    */
+    repeat (cantidadDeNutrientesASacar) {
+    Sacar(Azul)
+    }
+}

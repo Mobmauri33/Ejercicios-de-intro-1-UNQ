@@ -1,0 +1,89 @@
+program {
+    /*PROPOSITO: El programa llama a un procedimiento de nombre DibujarRelojAnalógicoSimplificadoDeRadio_(radio), que pone los números del reloj como en el programa original, pero donde el radio recibido por parámetro **radio** indica la distancia al centro del reloj
+    PRECONDICIONES: Que la celda actual es vacia, tener al menos la cantidad celdas dadas en las direcciones norte, este, sur y oeste.
+    OBSERVACIONES: la horas 12,3,6 y 9 estan representadas con bolitas de color rojo.
+    PARAMETROS:
+    *radio - Numero - numero de celdas de distancia desde el centro donde comienza el cabezal.
+    */
+    DibujarRelojAnalógicoSimplificadoDeRadio_(4)
+}
+
+procedure DibujarRelojAnalógicoSimplificadoDeRadio_(radio) {
+    /*PROPOSITO: pone los números del reloj como en el programa original, pero donde el radio recibido por parámetro **radio** indica la distancia al centro del reloj
+    PRECONDICIONES: Que la celda actual es vacia, tener al menos la cantidad celdas dadas en las direcciones norte, este, sur y oeste.
+    OBSERVACIONES: la horas 12,3,6 y 9 estan representadas con bolitas de color rojo.
+    PARAMETROS:
+    *radio - Numero - numero de celdas de distancia desde el centro donde comienza el cabezal.
+    */
+    DibujarRelojAnalógicoSimplificado(radio)
+}
+
+procedure DibujarRelojAnalógicoSimplificado(radio) {
+    /*PROPOSITO: Dibuja un reloj simplificado.
+    PRECONDICIONES: Tener al menos 2 celdas hacia el norte, 2 hacia el este, 2 hacia el sur y 2 hacia el oeste. la celdas deben estar vacias y el cabezal comienza en la celda del centro del tablero y termina el la misma celda del centro.
+    */
+    Dibujar12DelReloj(radio)
+    Dibujar3DelReloj(radio)
+    Dibujar6DelReloj(radio)
+    Dibujar9DelReloj(radio)
+}
+
+procedure Dibujar12DelReloj(radio) {
+    /*PROPOSITO: Dibuja el 12 en el reloj simplificado.
+    PRECONDICION: Tener al menos 2 celdas hacia el norte. la celda debe estar vacia y el cabezal comienza en la celda del centro del tablero y termina el la misma celda del centro.
+    */
+    repeat(radio) {
+     Mover(Norte)
+    }
+    repeat (12) {
+        Poner(Rojo)
+    }
+    repeat(radio) {
+     Mover(Sur)
+    } 
+}
+
+procedure Dibujar3DelReloj(radio) {
+    /*PROPOSITO: Dibuja el 3 en el reloj simplificado.
+    PRECONDICION: Tener al menos 2 celdas hacia el este. la celda debe estar vacia y el cabezal comienza en la celda del centro del tablero y termina el la misma celda del centro.
+    */
+    repeat(radio) {
+    Mover(Este)
+    }
+    repeat (3) {
+        Poner(Rojo)
+    }
+    repeat(radio) {
+    Mover(Oeste)
+    }
+}
+
+procedure Dibujar6DelReloj(radio) {
+    /*PROPOSITO: Dibuja el 6 en el reloj simplificado.
+    PRECONDICION: Tener al menos 2 celdas hacia el sur. la celda debe estar vacia y el cabezal comienza en la celda del centro del tablero y termina el la misma celda del centro.
+    */
+    repeat(radio) {
+    Mover(Sur)
+    }
+    repeat (6) {
+        Poner(Rojo)
+    }
+    repeat(radio) {
+    Mover(Norte)
+    }
+}
+
+procedure Dibujar9DelReloj(radio) {
+    /*PROPOSITO: Dibuja el 9 en el reloj simplificado.
+    PRECONDICION: Tener al menos 2 celdas hacia el sur. la celda debe estar vacia y el cabezal comienza en la celda del centro del tablero y termina el la misma celda del centro.
+    */
+    repeat(radio) {
+    Mover(Oeste)
+    }
+    repeat (9) {
+        Poner(Rojo)
+    }
+    repeat(radio) {
+    Mover(Este)
+    }
+}

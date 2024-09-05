@@ -1,0 +1,10 @@
+procedure EnviarAliadosParaDuplicarEnemigos() {
+    /*PROPOSITO: agrega soldados aliados en la celda actual
+en cantidad suficiente para que haya el doble de aliados que de soldados enemigos.
+    PRECONDICIONES: Desde la celda actual debe haber soldados aliados para poder duplicar.
+    */
+    
+    repeat() {
+        Poner(Negro)
+    }
+}

@@ -1,0 +1,55 @@
+program {
+    /*PROPOSITO: El programa llama a un procedimiento de nombre EscribirFechaConDía_Mes_Año_(día, mes, año), que permite
+ representar cualquier fecha dados el día, mes y año (como números).
+    PRECONDICIONES: Que la celda actual es vacia, tener al menos 2 celdas hacia el este.
+    OBSERVACIONES: las fechas se representan de la siguiente forma: (Azul para el día, Rojo para el mes y Verde para el año).
+    PARAMETROS:
+    *día - Numero - numero de bolitas que representan los dias de una fecha dada.
+    *mes - Numero - numero de bolitas que representan el mes de una fecha dada.
+    *año - Numero - numero de bolitas que representan el año de una fecha dada.
+    */
+    EscribirFechaConDía_Mes_Año_(14, 9, 1996)
+}
+
+procedure EscribirFechaConDía_Mes_Año_(día, mes, año) {
+    /*PROPOSITO: permite representar cualquier fecha dados el día, mes y año (como números).
+    PRECONDICIONES: Que la celda actual es vacia, tener al menos 2 celdas hacia el este.
+    OBSERVACIONES: las fechas se representan de la siguiente forma: (Azul para el día, Rojo para el mes y Verde para el año).
+    PARAMETROS:
+    *día - Numero - numero de bolitas que representan los dias de una fecha dada.
+    *mes - Numero - numero de bolitas que representan el mes de una fecha dada.
+    *año - Numero - numero de bolitas que representan el año de una fecha dada.
+    */
+    RegistrarDia(día)
+    Mover(Este)
+    RegistrarMes(mes)
+    Mover(Este)
+    RegistrarAño(año)
+}
+
+procedure RegistrarDia(día) {
+    /*PROPOSITO: Registrar el dia **día** con un numero dado de bolitas azules.
+    PRECONDICION: Que la celda actual es vacia.
+    */
+    repeat(día) {
+    Poner(Azul)
+    }
+}
+
+procedure RegistrarMes(mes) {
+    /*PROPOSITO: Registrar el mes **mes** con un numero dado de bolitas rojas.
+    PRECONDICION: Que la celda actual es vacia.
+    */
+    repeat(mes) {
+    Poner(Rojo)
+    }
+}
+
+procedure RegistrarAño(año) {
+    /*PROPOSITO: Registrar el año **año** con un numero dado de bolitas verdes.
+    PRECONDICION: Que la celda actual es vacia.
+    */
+    repeat(año) {
+    Poner(Verde)
+    }
+}

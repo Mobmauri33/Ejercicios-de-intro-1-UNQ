@@ -1,0 +1,20 @@
+program {
+    /*PROPOSITO: El programa llama a un procedimiento de nombre IrAEsquinaAl_Y_(primeraDirección, segundaDirección) que dadas dos direcciones **primeraDirección** y **segundaDirección** posiciona el cabezal en la esquina en dichas direcciones.
+    PRECONDICIONES: Las direcciones no pueden ser iguales ni opuestas.
+    PARAMETROS:
+    *primeraDirección - Direccion - primera direccion para posicionar el cabezal.
+    *segundaDirección - Direccion - segunda direccion para posicionar el cabezal.
+    */
+    IrAEsquinaAl_Y_(Sur, Este)
+}
+
+procedure IrAEsquinaAl_Y_(primeraDirección, segundaDirección) {
+    /*PROPOSITO: dadas dos direcciones **primeraDirección** y **segundaDirección** posiciona el cabezal en la esquina en dichas direcciones.
+    PRECONDICIONES: Las direcciones no pueden ser iguales ni opuestas.
+    PARAMETROS:
+    *primeraDirección - Direccion - primera direccion para posicionar el cabezal.
+    *segundaDirección - Direccion - segunda direccion para posicionar el cabezal.
+    */
+    IrAlBorde(primeraDirección)
+    IrAlBorde(segundaDirección)
+}

@@ -1,0 +1,22 @@
+program {
+    /*PROPOSITO: El programa llama a un procedimiento de nombre Sacar_DeColor_(cantidadASacar, colorASacar) que dado un número **cantidadASacar** y un color **colorASacar**, saque tantas bolitas como se indica del color dado de la celda actual.
+    PRECONDICIONES: Tener al menos la cantidad de bolitas dadas del color dado en la celda actual.
+    PARAMETROS:
+    *cantidadASacar - Número - numero de bolitas a sacar.
+    *colorASacar - Color - color de las bolitas a sacar.
+    */
+    Sacar_DeColor_(3, Rojo)
+}
+
+procedure Sacar_DeColor_(cantidadASacar, colorASacar) {
+    /*PROPOSITO: dado un número **cantidadASacar** y un color **colorASacar**, saque tantas bolitas como se indica del
+ color dado de la celda actual.
+    PRECONDICIONES: Tener al menos la cantidad de bolitas dadas del color dado en la celda actual.
+    PARAMETROS:
+    *cantidadASacar - Número - numero de bolitas a sacar.
+    *colorASacar - Color - color de las bolitas a sacar.
+    */
+    repeat(cantidadASacar) {
+    Sacar(colorASacar)
+    }
+}
