@@ -1,0 +1,29 @@
+program {
+    /*PROPOSITO:El programa llama a un procedimiento que quita de la celda actual todas las bolitas de todos los colores, dejando la celda vacía.
+    PRECONDICIONES:Que en la celda actual hayan bolitas de cualquier color.
+    PARAMETROS: -.
+    */
+    VaciarCelda()
+}
+
+procedure VaciarCelda() {
+    /*PROPOSITO:Quita de la celda actual todas las bolitas de todos los colores, dejando la celda vacía.
+    PRECONDICIONES:Que en la celda actual hayan bolitas de cualquier color.
+    PARAMETROS: -.
+    */
+    repeat(nroBolitas(Azul)) {
+    Sacar(Azul)
+    }
+    
+    repeat(nroBolitas(Negro)) {
+    Sacar(Negro)
+    }
+    
+    repeat(nroBolitas(Rojo)) {
+    Sacar(Rojo)
+    }
+    
+    repeat(nroBolitas(Verde)) {
+    Sacar(Verde)
+    }
+}
