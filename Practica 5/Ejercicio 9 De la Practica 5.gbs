@@ -1,0 +1,54 @@
+program {
+    /*PROPOSITO:El programa llama a un procedimiento en el que la fila actual se codifica una palabra en minúsculas usando bolitas negras, pone la misma palabra en mayúsculas en la fila al Norte con bolitas negras.
+    PRECONDICIONES:Que haya la cantidad de celdas en el tablero suficiente para escribir la palabra deseada hacia el este teniendo en cuenta la celda extra que marca la cantidad de letras de la palabra.
+    PARAMETROS:-.
+    */
+    PasarPalabraActualAMayúsculas()
+}
+procedure PasarPalabraActualAMayúsculas() {
+    /*PROPOSITO:la fila actual se codifica una palabra en minúsculas usando bolitas negras, pone la misma palabra en mayúsculas en la fila al Norte con bolitas negras.
+    PRECONDICIONES:Que haya la cantidad de celdas en el tablero suficiente para escribir la palabra deseada hacia el este teniendo en cuenta la celda extra que marca la cantidad de letras de la palabra.
+    PARAMETROS:-.
+    */
+    repeat(nroBolitas(Rojo)) {
+    Mover(Este)
+    CodificarLetraActualAMayúsculas(nroBolitas(Negro)-32, Negro, Norte)
+    }
+    IrAlBorde(Oeste)
+}
+
+procedure CodificarLetraActualAMayúsculas(cantidad, color, direccion) {
+  /*PROPOSITO:En la celda actual se codifica una letra en minúsculas usando bolitas negras, pone la misma letra en mayúsculas en la celda lindante al Norte con bolitas negras.
+    PRECONDICIONES:Que haya una celda hacia la direccion norte.
+    PARAMETROS:
+    * cantidad - cantidad de bolitas a poner.
+    * color - color de bolita a poner.
+    * direccion - direccion a donde mover el cabezal.
+    */
+    PonerLetra_MayusculaAl_(cantidad, color, direccion)
+}
+
+procedure PonerLetra_MayusculaAl_(cantidad, color, direccion) {
+    /*PROPOSITO:En la celda actual se codifica una letra en minúsculas usando bolitas negras, pone la misma letra en mayúsculas en la celda lindante al Norte con bolitas negras.
+    PRECONDICIONES:Que haya una celda hacia la direccion norte.
+    PARAMETROS:
+    * cantidad - cantidad de bolitas a poner.
+    * color - color de bolita a poner.
+    * direccion - direccion a donde mover el cabezal..
+    */
+    Mover(direccion)
+    Poner_DeColor_(cantidad, color)
+    Mover(opuesto(direccion))
+}
+
+procedure Poner_DeColor_(cantidad, color) {
+    /*PROPOSITO:En la celda actual pone cantidad de bolitas dado el parametro **cantidad**, y de color dado el parametro **color**.
+    PRECONDICIONES:-.
+    PARAMETROS:
+    * cantidad - cantidad de bolitas a poner.
+    * color - color de bolita a poner.
+    */
+    repeat(cantidad) {
+        Poner(color)
+    }
+}

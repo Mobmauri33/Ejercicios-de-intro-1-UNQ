@@ -1,0 +1,61 @@
+program {
+     /*PROPOSITO: el programa llama a un procedimiento con el nombre DibujarBandaDeAlto_YAncho_DeColor_ que dibuja una banda diagonal de color dado **color** de tamaño de celdas dadas como indique el parámetro **alto** y **ancho** (dibujando hacia arriba y hacia la derecha).  
+    PRECONDICIONES: Desde la celda actual debe haber hacia la direccion norte la cantidad de celdas dadas y el ancho dado hacia el este.
+    PARAMETROS:
+        *alto - Numero - celdas de alto de la banda.
+        *ancho - Numero - celdas de ancho de la banda.
+        *color - Color - color de la banda de bolitas.
+    */
+    DibujarBandaDeAlto_YAncho_DeColor_(4, 12, Azul)
+}
+
+procedure DibujarBandaDeAlto_YAncho_DeColor_(alto, ancho, color) {
+    /*PROPOSITO:  dibuja una banda diagonal de color dado **color** de tamaño de celdas dadas como indique el parámetro **alto** y **ancho** (dibujando hacia arriba y hacia la derecha).  
+    PRECONDICIONES: Desde la celda actual debe haber hacia la direccion norte la cantidad de celdas dadas y el ancho dado hacia el este.
+    PARAMETROS:
+    *alto - Numero - celdas de alto de la banda.
+    *ancho - Numero - celdas de ancho de la banda.
+    *color - Color - color de la banda de bolitas.
+    */
+    IrALaCeldaInicial()
+    DibujarLineaAncho(alto, ancho, color)
+    IrALaCeldaInicial()
+}
+procedure IrALaCeldaInicial() {
+    /*PROPOSITO: mueve el cabezal a la celda del margen inferior izquierdo del tablero.  
+    PRECONDICIONES: -. 
+    */
+    IrAlBorde(Sur)
+    IrAlBorde(Oeste)
+}
+
+procedure DibujarLineaAlto(alto, color) {
+    /*PROPOSITO:  dibuja una linea vertical de bolitas del color dado **color** de la cantidad celdas de alto dadas **alto**.  
+    PRECONDICIONES: Desde la celda actual debe haber la cantidad de celdas dadas hacia el norte.
+    */
+    repeat (alto-1) {
+        Poner(color)
+        Mover(Norte)
+    }
+    Poner(color)
+}
+
+procedure PasarALaSiguienteLinea(alto) {
+    /*PROPOSITO: posiciona el cabezal hacia la celda correspondiente para seguir con la siguiente linea roja a dibujar.  
+    PRECONDICIONES: Desde la celda actual debe haber una celda hacia la direccion norte y una celda hacia la direccion este.
+    */
+    repeat (alto-2) {
+        Mover(Sur)
+    }
+    Mover(Este)
+}
+
+procedure DibujarLineaAncho(alto, ancho, color) {
+    /*PROPOSITO:  dibuja de forma horizontal bolitas del color dado **color** de la cantidad celdas de ancho dado **ancho**.  
+    PRECONDICIONES: Desde la celda actual debe haber la cantidad de celdas dadas hacia el este.
+    */
+    repeat (ancho) {
+        DibujarLineaAlto(alto, color)
+        PasarALaSiguienteLinea(alto)
+    }
+}

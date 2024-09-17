@@ -1,0 +1,38 @@
+program {
+    /*PROPOSITO: Agrega soldados aliados en la celda actual
+en cantidad suficiente para que haya el doble de aliados que de soldados enemigos.
+    PRECONDICIONES: Desde la celda actual debe haber soldados enemigos para poder duplicar.
+    OBSERVACIONES: En el tablero se representan Soldados, los aliados con una bolita de color Negro y los enemigos con una bolita de color Rojo por cada soldado.
+    PARAMETROS:-.
+    */
+    EnviarAliadosParaDuplicarEnemigos()
+    PelearLaBatalla()
+}
+
+procedure EnviarAliadosParaDuplicarEnemigos() {
+    /*PROPOSITO: Agrega soldados aliados en la celda actual
+en cantidad suficiente para que haya el doble de aliados que de soldados enemigos.
+    PRECONDICIONES: Desde la celda actual debe haber soldados enemigos para poder duplicar.
+    OBSERVACIONES: En el tablero se representan Soldados, los aliados con una bolita de color Negro y los enemigos con una bolita de color Rojo por cada soldado.
+    PARAMETROS:-.
+    */
+    
+    repeat(nroBolitas(Rojo) * 2) {
+        Poner(Negro)
+    }
+}
+
+procedure PelearLaBatalla() {
+    /*PROPOSITO: Simula una batalla, suponiendo que hay suficiente cantidad de soldados aliados como para ganar la batalla.
+    PRECONDICIONES: Desde la celda actual debe haber soldados aliados y soldados enemigos para poder pelear.
+    OBSERVACIONES: En el tablero se representan Soldados, los aliados con una bolita de color Negro y los enemigos con una bolita de color Rojo por cada soldado.
+    PARAMETROS:-.
+    */
+    repeat((nroBolitas(Rojo) *3) div 2) {
+        Sacar(Negro)
+    }
+    repeat(nroBolitas(Rojo)) {
+        Sacar(Rojo)
+    }
+    
+}
