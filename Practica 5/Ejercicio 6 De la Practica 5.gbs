@@ -1,0 +1,17 @@
+program {
+    /*PROPOSITO:El programa llama a un procedimiento que quita del tablero en la celda actual todas las bolitas del color indicado por el parámetro.
+    PRECONDICIONES:Que en la celda actual hayan bolitas del color dado **colorASacar** en el parametro.
+    PARAMETROS: * colorASacar - color - color de bolita/s a sacar.
+    */
+    SacarTodasLasDeColor_(Azul)
+}
+
+procedure SacarTodasLasDeColor_(colorASacar) {
+    /*PROPOSITO:Quita de la celda actual todas las bolitas del color indicado por el parámetro.
+    PRECONDICIONES:Que en la celda actual hayan bolitas del color dado **colorASacar** en el parametro.
+    PARAMETROS: * colorASacar - color - color de bolita/s a sacar.
+    */
+    repeat(nroBolitas(colorASacar)) {
+    Sacar(colorASacar)
+    }
+}
