@@ -1,0 +1,22 @@
+program {
+    Sacar_ÁrbolesAl_(5, Este)
+}
+
+
+procedure Sacar_ÁrbolesAl_(cantidadDeÁrboles, direcciónASacar) {
+ /*PROPOSITO: Saca una cantidad dada de arboles a la direccion dada.
+    PRECONDICIONES:Tener una celda hacia la direccion dada.
+    OBSERVACIONES:
+    *Cada arbol esta representado por una bolita verde.
+    PARAMETROS:
+    *cantidadDeÁrboles - Numero - cantidad de bolitas verdes a sacar.
+    *direcciónASacar - direccion- direccion donde se van a sacar las bolitas verdes.
+    */
+    Mover(direcciónASacar)
+    repeat(cantidadDeÁrboles) {
+        Sacar(Verde)
+    }
+    Mover(opuesto(direcciónASacar))
+}
+
+

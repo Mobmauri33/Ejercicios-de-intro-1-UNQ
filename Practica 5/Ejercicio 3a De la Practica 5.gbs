@@ -1,0 +1,23 @@
+program {
+    Poner_SemillasAl_(5, Este)
+}
+
+
+procedure  Poner_SemillasAl_(cantidadDeSemillas, direcciónAPoner) {
+ /*PROPOSITO: Pone una cantidad dada de semillas a la direccion dada.
+    PRECONDICIONES:Tener una celda hacia la direccion dada.
+    OBSERVACIONES:
+    *Cada semilla esta representada por una bolita roja.
+    PARAMETROS:
+    *cantidadDeSemillas - Numero - cantidad de bolitas rojas a poner.
+    *direcciónAPoner - direccion- direccion donde se pondran las bolitas rojas.
+    */
+    Mover(direcciónAPoner)
+    repeat(cantidadDeSemillas) {
+        Poner(Rojo)
+    }
+    Mover(opuesto(direcciónAPoner))
+}
+
+
+

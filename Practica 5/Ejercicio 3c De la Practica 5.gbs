@@ -1,0 +1,26 @@
+program {
+    Sacar_SemillasEnDiagonalAl_Y_(8, Este, Norte)
+}
+
+
+procedure Sacar_SemillasEnDiagonalAl_Y_(cantidadDeSemillas, primeraDirDiagonal, segundaDirDiagonal) {
+    /*PROPOSITO: Saca una cantidad dada de semillas a la direccion dada en diagonal.
+    PRECONDICIONES:Tener una celda hacia la direccion dada en **primerDirDiagonal** y otra celda en **segundaDirDiagonal**.
+    ambias direcciones dadas no pueden ser iguales u opuestas.
+    OBSERVACIONES:
+    *Cada semilla esta representado por una bolita roja.
+    PARAMETROS:
+    *cantidadDeSemillas - Numero - cantidad de bolitas rojas a sacar.
+    *primeraDirDiagonal - direccion - direccion donde se van a mover el cabezal.
+    *segundaDirDiagonal - direccion - direccion donde se van a mover el cabezal y para posicionarse en la celda donde se van a sacar las bolitas rojas.
+    */
+    Mover(primeraDirDiagonal)
+    Mover(segundaDirDiagonal)
+    repeat(cantidadDeSemillas) {
+        Sacar(Rojo)
+    }
+    Mover(opuesto(segundaDirDiagonal))
+    Mover(opuesto(primeraDirDiagonal))
+}
+
+

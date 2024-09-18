@@ -1,0 +1,24 @@
+program {
+    Sacar_ÁrbolesEnDiagonalHorariaAl_(5, Norte)
+}
+
+
+procedure Sacar_ÁrbolesEnDiagonalHorariaAl_(cantidadDeÁrboles, direcciónDiagonal) {
+    /*PROPOSITO: Saca una cantidad dada de árboles en diagonal horaria a la direccion dada.
+    PRECONDICIONES:Tener una celda hacia la direccion dada en **direcciónDiagonal**.
+    OBSERVACIONES:
+    *Cada árbol esta representado por una bolita verde.
+    PARAMETROS:
+    *cantidadDeÁrboles - Numero - cantidad de bolitas verdes a sacar.
+    *direcciónDiagonal - direccion - direccion donde se van a mover el cabezal para posicionarse en la celda donde se van a sacar las bolitas verdes.
+    */
+    Mover(direcciónDiagonal)
+    Mover(siguiente(direcciónDiagonal))
+    repeat(cantidadDeÁrboles) {
+        Sacar(Verde)
+    }
+    Mover(previo(direcciónDiagonal))
+    Mover(opuesto(direcciónDiagonal))
+}
+
+
