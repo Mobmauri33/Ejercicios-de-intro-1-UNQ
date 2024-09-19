@@ -1,0 +1,19 @@
+program {
+    /*PROPOSITO: el programa llama a un procedimiento que censa el tablero si la celda actual se encuentra en la esquina norte-este.
+    PRECONDICIONES:tener al menos una celda hacia la direccion sur.
+    */
+    EstaVaciaLaCelda()
+}
+procedure EstaVaciaLaCelda() {
+    /*PROPOSITO: censa el tablero si la celda actual se encuentra vacia, si lo esta entonces pone una bolita verde sino mueve el cabezal una celda hacia la direccion este.
+    PRECONDICIONES:tener al menos una celda hacia la direccion este.
+    */
+    if (hayBolitas(Azul) || hayBolitas(Negro) || hayBolitas(Rojo) || hayBolitas(Verde))
+    then 
+    {
+        Mover(Este)
+    }
+    else {
+        Poner(Verde)
+    }
+}

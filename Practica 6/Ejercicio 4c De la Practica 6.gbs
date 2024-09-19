@@ -1,0 +1,22 @@
+program {
+    /*  PROPOSITO:El programa llama a un procedimiento llamado Mover_Si_(dirección, condición) , que dado una direccion y un valor de verdad llamado condición, mueve el cabezal hacia la direccion dada si el valor de verdad de la condición es verdadero, y no se mueva si no. 
+        PRECONDICIONES:-.
+        PARAMETROS:
+        *dirección - direccion - direccion dada en el parametro.
+        *condición - booleano - valor de verdad de la condicion.
+    */
+     Mover_Si_(Oeste, puedeMover(Oeste))
+}
+procedure  Mover_Si_(dirección, condición) {
+    /*  PROPOSITO: Dado una direccion y un valor de verdad llamado condición, mueve el cabezal hacia la direccion dada si el valor de verdad de la condición es verdadero, y no se mueva si no. 
+        PRECONDICIONES:-.
+        PARAMETROS:
+        *dirección - direccion - direccion dada en el parametro.
+        *condición - booleano - valor de verdad de la condicion.
+    */
+    if(condición)
+    {
+        Mover(dirección)
+    }
+}
+

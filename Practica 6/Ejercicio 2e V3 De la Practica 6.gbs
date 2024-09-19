@@ -1,0 +1,20 @@
+program {
+    /*PROPOSITO: el programa llama a un procedimiento que censa el tablero si la celda actual es la unica celda del tablero, si es verdad pone una bolita verde sino pone una bolita roja.
+    PRECONDICIONES:-.
+    */
+    EstaEsLaUnicaCelda()
+}
+procedure EstaEsLaUnicaCelda() {
+    /*PROPOSITO: censa el tablero si la celda actual es la unica celda del tablero, si es verdad pone una bolita verde sino pone una bolita roja.
+    PRECONDICIONES:-.
+    */
+    if (not puedeMover(Este) && not puedeMover(Sur) && not puedeMover(Oeste) && not puedeMover(Norte) )
+    then 
+    {
+        Poner(Verde)
+    }
+    else
+    {
+        Poner(Rojo)
+    }
+}

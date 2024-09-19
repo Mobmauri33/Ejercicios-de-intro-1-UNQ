@@ -1,0 +1,15 @@
+program {
+    /*PROPOSITO: el programa llama a un procedimiento que censa el tablero en la celda actual si hay al menos 9 bolitas entre rojas y negras.
+    PRECONDICIONES:Tener al menos 9 bolitas en la celda actual entre rojas y negras.
+    */
+    HayAlMenos9BolitasEnTotalEntreRojasYNegras ()
+}
+procedure HayAlMenos9BolitasEnTotalEntreRojasYNegras () {
+    /*PROPOSITO: censa el tablero en la celda actual si hay al menos 9 bolitas entre rojas y negras.
+    PRECONDICIONES:Tener al menos 9 bolitas en la celda actual entre rojas y negras.
+    */
+    if (nroBolitas(Rojo) + nroBolitas(Negro) >= 9)
+    then {
+        Mover(Este)
+    }
+}

@@ -1,0 +1,22 @@
+program {
+    /*  PROPOSITO:El programa llama a un procedimiento llamado ExpandirBacteriaDeLaColonia , que agrega exactamente una bacteria más y consuma nutrientes, a razón de dos nutrientes por bacteria expandida; si no hay bacterias o no hay suficientes nutrientes, no hace nada. 
+        PRECONDICIONES:Siempre que en la celda actual haya un cultivo de bacterias y haya suficientes nutrientes.
+        PARAMETROS:-.
+        OBSERVACIONES: Las bacterias se representan con bolitas Verdes y los nutrientes con bolitas Rojas.
+    */
+     ExpandirBacteriaDeLaColonia()
+}
+procedure  ExpandirBacteriaDeLaColonia() {
+    /*  PROPOSITO:Agrega exactamente una bacteria más y consuma nutrientes, a razón de dos nutrientes por bacteria expandida; si no hay bacterias o no hay suficientes nutrientes, no hace nada. 
+        PRECONDICIONES:Siempre que en la celda actual haya un cultivo de bacterias y haya suficientes nutrientes.
+        PARAMETROS:-.
+        OBSERVACIONES: Las bacterias se representan con bolitas Verdes y los nutrientes con bolitas Rojas.
+    */
+    if(nroBolitas(Verde) >= 1 && nroBolitas(Rojo) >=2 )
+    {
+        Poner(Verde)
+        repeat (2) {
+            Sacar(Rojo)
+        }
+    }
+}

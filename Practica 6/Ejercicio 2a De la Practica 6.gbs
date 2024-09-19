@@ -1,0 +1,15 @@
+program {
+    /*PROPOSITO: el programa llama a un procedimiento que censa el tablero en la celda actual si hay mas de 5 bolitas rojas.
+    PRECONDICIONES:-.
+    */
+    HayMasDe5BolitasRojas ()
+}
+procedure HayMasDe5BolitasRojas () {
+    /*PROPOSITO: censa el tablero en la celda actual si hay mas de 5 bolitas rojas.
+    PRECONDICIONES:-.
+    */
+    if (nroBolitas(Rojo) > 5)
+    then {
+        Mover(Este)
+    }
+}

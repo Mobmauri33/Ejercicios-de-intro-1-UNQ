@@ -1,0 +1,75 @@
+program {
+    /*  PROPOSITO:El programa llama a un procedimiento llamado PonerFlecha_AlNorteSiCorresponde(colorDeLaFlecha) , que dado un color para representar flechas, ponga una flecha al Norte si existe espacio para moverse en esa dirección. 
+        PRECONDICIONES:Tener una celda lindante hacia la direccion norte, dos celdas hacia la direccion sur, una al oeste y otra hacia el este de la celda actual.
+        PARAMETROS:
+        *colorDeLaFlecha - color - color que va a tener la flecha.
+        OBSERVACIONES: Las flechas serán representadas con una bolita del color dado.
+    */
+     PonerFlecha_AlNorteSiCorresponde(Rojo)
+}
+procedure  PonerFlecha_AlNorteSiCorresponde(colorDeLaFlecha) {
+    /*  PROPOSITO: Dado un color para representar flechas, ponga una flecha al Norte si existe espacio para moverse en esa dirección. 
+        PRECONDICIONES:Tener una celda lindante hacia la direccion norte, dos celdas hacia la direccion sur, una al oeste y otra hacia el este de la celda actual.
+        PARAMETROS:
+        *colorDeLaFlecha - color - color que va a tener la flecha.
+        OBSERVACIONES: Las flechas serán representadas con una bolita del color dado.
+    */
+    if(puedeMover(Norte))
+    {
+        PonerFlecha_AlNorte(colorDeLaFlecha)
+    }
+}
+
+procedure PonerFlecha_AlNorte(colorDeLaFlecha) {
+    /*  PROPOSITO: Dado un color para representar flechas, ponga una flecha al Norte. 
+        PRECONDICIONES:Tener una celda lindante hacia la direccion norte, dos celdas hacia la direccion sur, una al oeste y otra hacia el este de la celda actual.
+        PARAMETROS:
+        *colorDeLaFlecha - color - color que va a tener la flecha.
+        OBSERVACIONES: Las flechas serán representadas con una bolita del color dado.
+    */
+    ArmarPuntaDeFlecha(colorDeLaFlecha)
+    ArmarCuerpoDeFlecha(colorDeLaFlecha)
+}
+
+procedure ArmarPuntaDeFlecha(colorDeLaFlecha) {
+    /*  PROPOSITO: Dado un color para representar flechas, arma la punta de una flecha al Norte. 
+        PRECONDICIONES:Tener una celda lindante hacia la direccion norte, una al oeste y otra hacia el este de la celda actual.
+        PARAMETROS:
+        *colorDeLaFlecha - color - color que va a tener la flecha.
+        OBSERVACIONES: Las flechas serán representadas con una bolita del color dado.
+    */
+    Mover(Norte)
+    Poner(colorDeLaFlecha)
+    Mover(Sur)
+    if(puedeMover(Oeste) && puedeMover(Este))
+    {
+        Mover(Oeste)
+        repeat(2) {
+        Poner(colorDeLaFlecha)
+        Mover(Este)
+    }
+    Poner(colorDeLaFlecha)
+    Mover(Oeste)
+    }
+    
+}
+
+procedure ArmarCuerpoDeFlecha(colorDeLaFlecha) {
+    /*  PROPOSITO: Dado un color para representar flechas, arma el cuerpo de una flecha al Norte. 
+        PRECONDICIONES:Tener dos celdas hacia la direccion sur de la celda actual.
+        PARAMETROS:
+        *colorDeLaFlecha - color - color que va a tener la flecha.
+        OBSERVACIONES: Las flechas serán representadas con una bolita del color dado.
+    */
+    if(puedeMover(Sur) && puedeMover(Este) && puedeMover(Oeste))
+    {
+        Mover(Sur)
+        Poner(colorDeLaFlecha)
+        if(puedeMover(Sur))
+        {
+        Mover(Sur)
+        Poner(colorDeLaFlecha)
+        }
+    }
+    
+}

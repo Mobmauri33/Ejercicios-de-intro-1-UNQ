@@ -1,0 +1,15 @@
+program {
+    /*PROPOSITO: el programa llama a un procedimiento que censa el tablero si la celda actual se encuentra en la esquina norte-este.
+    PRECONDICIONES:tener al menos una celda hacia la direccion sur.
+    */
+    EstoyEnLaEsquinaNorteEste ()
+}
+procedure EstoyEnLaEsquinaNorteEste () {
+    /*PROPOSITO: censa el tablero si la celda actual se encuentra en la esquina norte-este.
+    PRECONDICIONES:tener al menos una celda hacia la direccion sur.
+    */
+    if (not puedeMover(Norte) && not puedeMover(Este))
+    then {
+        Mover(Sur)
+    }
+}

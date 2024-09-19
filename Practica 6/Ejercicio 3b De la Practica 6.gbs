@@ -1,0 +1,23 @@
+program {
+    /*  PROPOSITO:El programa llama a un procedimiento llamado DesempatarParaElLocal_Contra_(colorDelLocal,colorDelVisitante) , que dados los colores de dos jugadores, cuyos puntos se representan mediante la cantidad de bolitas del color del jugador, otorgue un punto al jugador con color colorDelLocal solamente en el caso en que la celda actual contiene la misma cantidad de bolitas de ambos colores.
+        PRECONDICIONES:Tener 2 colores de bolitas en la celda actual.
+        PARAMETROS:
+        *   colorDelLocal - color - color del equipo local.
+        *   colorDelVisitante - color - color del equipo visitante.
+        OBSERVACIONES:Cada equipo se representa con un color y sus bolitas representan la cantidad de puntos de su equipo correspondientes.
+    */
+    DesempatarParaElLocal_Contra_(Negro,Rojo)
+}
+procedure DesempatarParaElLocal_Contra_(colorDelLocal,colorDelVisitante) {
+    /*  PROPOSITO:Dados los colores de dos jugadores, cuyos puntos se representan mediante la cantidad de bolitas del color del jugador, otorgue un punto al jugador con color colorDelLocal solamente en el caso en que la celda actual contiene la misma cantidad de bolitas de ambos colores.
+        PRECONDICIONES:Tener 2 colores de bolitas en la celda actual.
+        PARAMETROS:
+        *   colorDelLocal - color - color del equipo local.
+        *   colorDelVisitante - color - color del equipo visitante.
+        OBSERVACIONES:Cada equipo se representa con un color y sus bolitas representan la cantidad de puntos de su equipo correspondientes.
+    */
+    if(nroBolitas(colorDelLocal) == nroBolitas(colorDelVisitante))
+    {
+        Poner(colorDelLocal)
+    }
+}

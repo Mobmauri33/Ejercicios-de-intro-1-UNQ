@@ -1,0 +1,22 @@
+program {
+    /*  PROPOSITO:El programa llama a un procedimiento llamado Sacar_Si_(color, condición) , que dado un color y un valor de verdad llamado condición, saca en la celda actual una bolita del color dado si el valor de verdad de la condición es verdadero, y no lo saque si no. 
+        PRECONDICIONES:-.
+        PARAMETROS:
+        *color - color - color dado en el parametro.
+        *condición - booleano - valor de verdad de la condicion.
+    */
+     Sacar_Si_(Verde, nroBolitas(Verde) >= 1)
+}
+procedure  Sacar_Si_(color, condición) {
+    /*  PROPOSITO: Dado un color y un valor de verdad llamado condición, saca en la celda actual una bolita del color dado si el valor de verdad de la condición es verdadero, y no lo saque si no. 
+        PRECONDICIONES:-.
+        PARAMETROS:
+        *color - color - color dado en el parametro.
+        *condición - booleano - valor de verdad de la condicion.
+    */
+    if(condición)
+    {
+        Sacar(color)
+    }
+}
+
