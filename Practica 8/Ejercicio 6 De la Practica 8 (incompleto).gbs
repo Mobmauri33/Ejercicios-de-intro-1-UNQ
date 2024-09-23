@@ -1,0 +1,14 @@
+procedure IrAPrimeraCeldaEnUnRecorridoAl_Y_(dirPrincipal, dirSecundaria) {
+    /*PROPOSITO: dada una direccion principal **dirPrincipal** y una direccion secundaria **dirSecundaria**, el cabezal se posiciona en la primera celda en un recorrido.
+    PRECONDICIONES:Debe tener al menos una celda hacia la direccion dada como parametro.
+    PARAMETROS: **dirPrincipal** - **dirSecundaria**
+    TIPOS:
+    *dirPrincipal - dirección - direccion principal dado como parametro.
+    *dirSecundaria - dirección - direccion secundaria dado como parametro.
+    */
+    while( puedeMover(dirPrincipal) && puedeMover(dirSecundaria) )
+    {
+        Mover(dirPrincipal)
+        Mover(dirSecundaria)
+    }
+}
