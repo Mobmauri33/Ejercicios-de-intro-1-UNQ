@@ -1,0 +1,38 @@
+program {
+    /*
+    PROPOSITO:El programa debe sacar todas las bolitas del color dado por el parámetro color de cada una de las celdas de la fila actual, desde la celda en donde se encuentra el cabezal (incluyendo esta) hacia el final de la fila en la dirección dada por dirección. 
+    PRECONDICIONES: Solamente se puede poner direccion Oeste o Este como parametro y el cabezal termina en la ultima celda de la fila.
+    PARAMETROS: color, dirección.
+    TIPO:
+        *color - Color de la/s bolita/s a sacar.
+        *dirección - dirección en la que se va a sacar las bolitas.
+    */
+    VaciarFilaDeBolitasDeColor_HaciaLaDirección_(Azul, Oeste)
+}
+procedure VaciarFilaDeBolitasDeColor_HaciaLaDirección_(color, dirección) {
+    /*
+    PROPOSITO: Debe sacar todas las bolitas del color dado por el parámetro color de cada una de las celdas de la fila actual, desde la celda en donde se encuentra el cabezal (incluyendo esta) hacia el final de la fila en la dirección dada por dirección. 
+    PRECONDICIONES: Solamente se puede poner direccion Oeste o Este como parametro y el cabezal termina en la ultima celda de la fila.
+    PARAMETROS: color, dirección.
+    TIPO:
+        *color - Color de la/s bolita/s a sacar.
+        *dirección - dirección en la que se va a sacar las bolitas.
+    */
+    while((puedeMover(dirección) && hayBolitas(color)) || (not hayBolitas(color) && puedeMover(dirección)))
+    {
+        SacarTodasLasBolitasDeColor_(color)
+        Mover(dirección)
+    }
+    SacarTodasLasBolitasDeColor_(color)
+}
+
+procedure SacarTodasLasBolitasDeColor_(color) {
+    /*PROPOSITO: saca todas las bolitas del color dado por el parámetro de la actual.
+    PRECONDICIONES: Tener al menos una bolita del color dado en el parametro.
+    PARAMETROS: color.
+    TIPO: color - Color de la/s bolita/s a sacar.
+    */
+    repeat(nroBolitas(color)) {
+        Sacar(color)
+    }
+}
