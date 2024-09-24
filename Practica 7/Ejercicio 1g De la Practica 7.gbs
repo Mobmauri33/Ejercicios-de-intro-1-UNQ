@@ -1,0 +1,21 @@
+program {
+    if(siFaltaAlgunColorOEstaVacia())
+    {
+        Mover(Norte)
+        Poner(Verde)
+    }
+    else
+    {
+        Mover(Norte)
+        Poner(Rojo)
+    }
+}
+
+function siFaltaAlgunColorOEstaVacia() {
+    /*PROPOSITO:Describe si a la celda actual le falta algun color o esta vacia.
+    PRECONDICIONES:-.
+    PARAMETROS:-.
+    TIPO: Booleano.
+    */
+    return ((not hayBolitas(Azul) || not hayBolitas(Negro) || not hayBolitas(Rojo) || not hayBolitas(Verde)) || (not hayBolitas(Azul) && not hayBolitas(Negro) && not hayBolitas(Rojo) && not hayBolitas(Verde)))
+    }

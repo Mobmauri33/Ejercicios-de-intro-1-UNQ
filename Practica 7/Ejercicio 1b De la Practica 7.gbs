@@ -1,0 +1,20 @@
+program {
+    if(hayMasDe5BolitasEnTotal() > 5)
+    {
+        Mover(Norte)
+        Poner(Verde)
+    }
+    else
+    {
+        Mover(Norte)
+        Poner(Rojo)
+    }
+}
+
+function hayMasDe5BolitasEnTotal() {
+    /*PROPOSITO:Describe si en la celda hay mas de 5 bolitas en total.
+    PRECONDICIONES:-.
+    PARAMETROS:-.
+    */
+    return (nroBolitas(Rojo) + nroBolitas(Azul) + nroBolitas(Verde) + nroBolitas(Negro))
+    }

@@ -1,0 +1,21 @@
+program {
+    if(hayBolitasDeTodosLosColores())
+    {
+        Mover(Norte)
+        Poner(Verde)
+    }
+    else
+    {
+        Mover(Norte)
+        Poner(Rojo)
+    }
+}
+
+function hayBolitasDeTodosLosColores() {
+    /*PROPOSITO:Describe si en la celda hay bolitas de todos los colores.
+    PRECONDICIONES:-.
+    PARAMETROS:-.
+    TIPO: Booleano.
+    */
+    return (hayBolitas(Azul) && hayBolitas(Negro) && hayBolitas(Rojo) && hayBolitas(Verde))
+    }

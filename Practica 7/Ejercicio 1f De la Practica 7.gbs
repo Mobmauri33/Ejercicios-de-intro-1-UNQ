@@ -1,0 +1,21 @@
+program {
+    if(laCeldaActualEstaVacia())
+    {
+        Mover(Norte)
+        Poner(Verde)
+    }
+    else
+    {
+        Mover(Norte)
+        Poner(Rojo)
+    }
+}
+
+function laCeldaActualEstaVacia() {
+    /*PROPOSITO:Describe si la celda actual esta vacia.
+    PRECONDICIONES:-.
+    PARAMETROS:-.
+    TIPO: Booleano.
+    */
+    return (not hayBolitas(Azul) && not hayBolitas(Negro) && not hayBolitas(Rojo) && not hayBolitas(Verde))
+    }

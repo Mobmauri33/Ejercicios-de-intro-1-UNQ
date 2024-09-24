@@ -1,0 +1,16 @@
+program {
+    escribir := (contarBolitasTotales())
+    Mover(Norte)
+    repeat(escribir)
+    {
+        Poner(Rojo)
+    }
+}
+
+function contarBolitasTotales() {
+    /*PROPOSITO:Describe la cantidad de bolitas en total de la celda actual.
+    PRECONDICIONES:-.
+    PARAMETROS:-.
+    */
+    return (nroBolitas(Rojo) + nroBolitas(Azul) + nroBolitas(Verde) + nroBolitas(Negro))
+    }

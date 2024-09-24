@@ -1,0 +1,20 @@
+program {
+    if(hay5BolitasEnLaCeldaActual() == 5)
+    {
+        Mover(Norte)
+        Poner(Verde)
+    }
+    else
+    {
+        Mover(Norte)
+        Poner(Rojo)
+    }
+}
+
+function hay5BolitasEnLaCeldaActual() {
+    /*PROPOSITO:Describe si en la celda hay exactamente 5 bolitas en total.
+    PRECONDICIONES:-.
+    PARAMETROS:-.
+    */
+    return (nroBolitas(Rojo) + nroBolitas(Azul) + nroBolitas(Verde) + nroBolitas(Negro))
+    }

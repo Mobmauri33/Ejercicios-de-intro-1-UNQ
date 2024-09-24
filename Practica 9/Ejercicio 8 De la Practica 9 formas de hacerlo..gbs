@@ -1,0 +1,39 @@
+program {
+    /*PROPOSITO:El programa copia los contenidos de la celda actual a la celda lindante en la dirección **direccionAcopiar** dada.
+    PRECONDICIONES:la celda actual, independientemente de los contenidos que tuviera la celda de destino previamente.
+    PARAMETROS: **direccionAcopiar** - direccion - direccion lindante a la cual se va copiar el contenido de la celda actual.
+    */
+    CopiarCeldaAl_(Norte)
+}
+procedure CopiarCeldaAl_(direccionAcopiar) {
+    /*PROPOSITO: copia los contenidos de la celda actual a la celda lindante en la dirección **direccionAcopiar** dada.
+    PRECONDICIONES:la celda actual, independientemente de los contenidos que tuviera la celda de destino previamente.
+    PARAMETROS: **direccionAcopiar** - direccion - direccion lindante a la cual se va copiar el contenido de la celda actual.
+    */
+    cantidadDeAzulesEnCeldaCopiada := nroBolitas(Azul)
+    cantidadDeNegrasEnCeldaCopiada := nroBolitas(Negro)
+    cantidadDeRojasEnCeldaCopiada := nroBolitas(Rojo)
+    cantidadDeVerdesEnCeldaCopiada := nroBolitas(Verde)
+    Mover(direccionAcopiar)
+    VaciarCelda()
+    Poner_DeColor_(cantidadDeAzulesEnCeldaCopiada ,Azul)
+    Poner_DeColor_(cantidadDeNegrasEnCeldaCopiada ,Negro)
+    Poner_DeColor_(cantidadDeRojasEnCeldaCopiada ,Rojo)
+    Poner_DeColor_(cantidadDeVerdesEnCeldaCopiada ,Verde)
+    
+}
+
+procedure CopiarBolitasDe_EnCeldaAl_(colorACopiar, direccionAcopiar) {
+    cantidadDebolitasEnLaCeldaCopiada := nroBolitas(colorACopiar)
+    Mover(direccionAcopiar)
+    SacarTodasLasDeColor_(colorACopiar)
+    Poner_DeColor_(cantidadDebolitasEnLaCeldaCopiada,colorACopiar )
+    Mover(opuesto(direccionAcopiar))
+}
+
+procedure Dejar_BolitasDe_EnCeldaAl_(cantidadADejar,colorADejar, direccionADejar) {
+    Mover(direccionADejar)
+    SacarTodasLasDeColor_(colorADejar)
+    Poner_DeColor_(cantidadDebolitasEnLaCeldaCopiada,colorACopiar )
+    Mover(opuesto(direccionAcopiar))
+}
