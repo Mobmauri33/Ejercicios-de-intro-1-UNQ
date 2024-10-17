@@ -1,0 +1,377 @@
+
+
+procedure PonerUnaDeCada(){
+    /*
+    PROPÓSITO: Poner una bolita de cada color en la celda actual
+    PRECONDICIONES: Ninguna
+    */
+    Poner(Rojo)
+    Poner(Verde)
+    Poner(Negro)
+    Poner(Azul)
+}
+
+procedure Poner_Al_(colorAPoner, direcciónDondePoner){
+    /*
+    PROPÓSITO: Poner una bolita de color *colorAPoner* en la celda
+                al **direcciónDondePoner** de la celda actual, el cabezal
+                finaliza en la celda **direcciónDondePoner**
+    PRECONDICIONES: *Que al menos haya una celda al **direcciónDondePoner**
+    PARÁMETROS: *colorAPoner : color -el color de la bolita a poner
+                *direcciónDondePoner : dirección -la dirección a donde poner la bolita
+    */
+    Mover(direcciónDondePoner)
+    Poner(colorAPoner)
+}
+
+procedure Poner_DeColor_(cantidadAPoner, colorAPoner){
+    /*
+    PROPÓSITO: Poner **cantidadAPoner** bolitas de color **colorAPoner** en la celda actual
+    PRECONDICIONES: Ninguna
+    PARÁMETROS: cantidadAPoner : número -la cantidad de bolitas a poner
+                colorAPoner : color -el color de la bolita a poner
+    */
+    repeat(cantidadAPoner){
+        Poner(colorAPoner)
+    }
+}
+
+procedure Mover_VecesAl_(cantidadAMover, direcciónAMover){
+    /*
+    PROPÓSITO: Mover el cabezal **cantidadAMover** celdas al **direcciónAMover**, el cabezal finaliza
+                en la **cantidadAMover** celda al **direcciónAMover**
+    PRECONDICIONES: *Que al menos haya **cantidadAMover** celdas al **direcciónAMover**
+    PARÁMETROS: cantidadAMover : número -Cantidad de veces a mover el cabezal
+                direcciónAMover : dirección -la dirección a mover el cabezal
+    */
+    repeat(cantidadAMover){
+        Mover(direcciónAMover)
+    }
+}
+
+procedure Sacar_DeColor_(cantidadASacar, colorASacar){
+    /*
+    PROPÓSITO: Sacar **cantidadASacar** bolitas de color **colorASacar** de la celda actual
+    PRECONDICIONES: Que al menos haya **cantidadASacar** bolitas de color **colorASacar** en la celda actual
+    PARÁMETROS: cantidadASacar : número -el número de bolitas a sacar
+                colorASacar : color -el color de bolita a sacar
+    */
+    repeat(cantidadASacar){
+        Sacar(colorASacar)
+    }
+}
+
+procedure IrAEsquinaAl_Y_(primeraDirección, segundaDirección){
+    /*
+    PROPÓSITO: Posicionar el cabezal a la esquina **primeraDirección** y **segundaDirección** del
+                tablero
+    PRECONDICIONES: **primeraDirección** y **segundaDirección** no deben ser iguales
+                    **primeraDirección** y **segundaDirección** no deben ser opuestos
+    */
+    IrAlBorde(primeraDirección)
+    IrAlBorde(segundaDirección)
+}
+
+procedure SacarTodasLasDeColor_(colorASacar){
+    /*
+    PROPÓSITO: Sacar todas las bolitas de color **colorASacar** de la celda actual
+    PRECONDICIONES: Ninguna
+    PARÁMETROS: colorASacar : color -el color a sacar en la celda actual
+    */
+    Sacar_DeColor_(nroBolitas(colorASacar), colorASacar)
+}
+
+procedure VaciarCelda(){
+    /*
+    PROPÓSITO: Quitar todas las bolitas de todos los colores de la celda actual
+    PRECONDICIONES: Ninguna
+    */
+    SacarTodasLasDeColor_(Azul)
+    SacarTodasLasDeColor_(Negro)
+    SacarTodasLasDeColor_(Verde)
+    SacarTodasLasDeColor_(Rojo)
+}
+
+procedure Poner_Si_(color, condición){
+    /*
+    PROPÓSITO: Poner una bolita de color **color** solo si se cumple la condición 
+                    **condición**
+    PRECONDICIONES: Ninguna
+    PARÁMETROS: *color : color -el color de la bolita a poner
+                *condición : booleano -la condición de tipo booleano
+    */
+    if (condición){
+        Poner(color)
+    }
+}
+
+procedure Sacar_Si_(color, condición){
+    /*
+    PROPÓSITO: Sacar una bolita de color **color** solo si se cumple la condición 
+                    **condición**
+    PRECONDICIONES: Ninguna
+    PARÁMETROS: *color : color -el color de la bolita a poner
+                *condición : booleano -la condición de tipo booleano
+    */
+    if (condición){
+        Sacar(color)
+    }
+}
+
+procedure Mover_Si_(dirección, condición){
+    /*
+    PROPÓSITO: Mover el cabezal al **dirección** solo si se cumple la condición 
+                    **condición**
+    PRECONDICIONES: *Que al menos haya una celda al **dirección** de la celda actual
+    PARÁMETROS: *dirección : dirección -la dirección a donde mover el cabezal
+                *condición : booleano -la condición de tipo booleano
+    */
+    if (condición){
+        Mover(dirección)
+    }
+}
+
+function esCeldaVacía(){
+    /*
+    PROPÓSITO: Indica que la celda actual se encuentra vacía
+    PRECONDICIONES: Ninguna
+    TIPO: Booleano
+    */
+    return(not hayBolitas(Azul) && not hayBolitas(Negro) && not hayBolitas(Verde) && not hayBolitas(Rojo))
+}
+
+function hayAlMenosUnaDeCada(){
+    /*
+    PROPÓSITO: Indica que en la celda actual hay al menos una bolita de cada color
+    PRECONDICIONES: Ninguna
+    TIPO: Booleano
+    */
+    return(nroBolitas(Azul) >= 1 && nroBolitas(Negro) >= 1 && nroBolitas(Verde) >= 1 && nroBolitas(Rojo) >= 1)
+}
+
+function esCeldaConBolitas(){
+    /*
+    PROPÓSITO: Indica que en la celda actual tiene al menos una bolita de cualquier color
+    PRECONDICIONES: Ninguna
+    TIPO: Booleano
+    */
+    return(nroBolitas(Azul) >= 1 || nroBolitas(Negro) >= 1 || nroBolitas(Verde) >= 1 || nroBolitas(Rojo) >= 1)
+}
+
+
+procedure IrAPrimeraCeldaEnUnRecorridoAl_Y_(dirPrincipal, dirSecundaria){
+    /*
+    PROPÓSITO: Mover el cabezal a la primera celda en un recorrido al **dirPrincipal**
+                    y **dirSecundaria** de la actual
+    PRECONDICIONES: **dirPrincipal** y **dirSecundaria** no deben ser iguales
+                    **dirPrincipal** y **dirSecundaria** no deben ser opuestas
+    PARÁMETROS: *dirPrincipal : Dirección -la dirección principal a llevar el cabezal
+                *dirSecundaria : Dirección -la dirección secundaria a llevar el cabezal
+    */
+    IrAlBorde(opuesto(dirPrincipal))
+    IrAlBorde(opuesto(dirSecundaria))
+}
+
+
+function haySiguienteCeldaEnUnRecorridoAl_Y_(dirPrincipal, dirSecundaria){
+    /*
+    PROPÓSITO: Indica si hay una siguiente celda en un recorrido de la celda actual al 
+                **dirPrincipal** o **dirSecundaria**
+    PRECONDICIONES: **dirPrincipal** y **dirSecundaria** no deben ser iguales
+                    **dirPrincipal** y **dirSecundaria** no deben ser opuestas
+    PARÁMETROS: *dirPrincipal : Dirección -la dirección principal a la cuál ver si hay siguiente celda
+                *dirSecundaria : Dirección -la dirección secundaria a la cuál ver si hay siguiente celda
+    TIPO: Booleano
+    */
+    return(puedeMover(dirPrincipal) || puedeMover(dirSecundaria))
+}
+
+
+procedure IrASiguienteCeldaEnUnRecorridoAl_Y_(dirPrincipal, dirSecundaria){
+    /*
+    PROPÓSITO: Ir a siguiente celda en un recorrido al **dirPrincipal** o **dirSecundaria**
+                    de la celda actual
+    PRECONDICIONES: **dirPrincipal** y **dirSecundaria** no deben ser iguales
+                    **dirPrincipal** y **dirSecundaria** no deben ser opuestas
+    PARÁMETROS: *dirPrincipal : Dirección -la dirección principal a llevar el cabezal
+                *dirSecundaria : Dirección -la dirección secundaria a llevar el cabezal
+    */
+    if (puedeMover(dirPrincipal)){
+        Mover(dirPrincipal)
+    }
+    else{
+        IrAlBorde(opuesto(dirPrincipal))
+        Mover(dirSecundaria)
+    }
+}
+
+-------------------------------------------------------------------------------------------
+function hayBolitas_Al_(color, dirección){
+    /*
+    PROPÓSITO: Indica si hay bolitas de color **color** en la celda al **dirección**
+                    de la celda actual
+    PRECONDICIONES: Ninguna
+    TIPO: Booleano
+    PARÁMETROS: *color : color -el color de la bolita a mirar
+                *dirección : dirección -la dirección a donde mirar si hay bolitas
+    */
+    return(puedeMover(dirección) && hayBolitas_En_(color, dirección)) 
+    #Ésto se llama short circuit o CIRCUITO CORTO
+}
+
+function hayBolitas_En_(color, dirección){
+    /*
+    PROPÓSITO: Indica si hay bolitas de color **color** en la celda al **dirección**
+                    de la celda actual
+    PRECONDICIONES: Hay al menos una celda al **dirección** de la celda actual
+    TIPO: Booleano
+    PARÁMETROS: *color : color -el color de la bolita a mirar
+                *dirección : dirección -la dirección a donde mirar si hay bolitas
+    */
+    Mover(dirección)
+    return(hayBolitas(color))
+}
+----------------------------------------------------------------------------------------
+
+function mínimoEntre_Y_(expresión1, expresión2){
+    /*
+    PROPÓSITO: Indica cuál es el mínimo entre las expresiones **expresion1** y
+                    **expresion2**
+    PRECONDICIONES: **expresión1** y **expresión2** deben ser del mismo tipo
+                    **expresión1** y **expresión2** no deben ser iguales
+    TIPO: Booleano
+    OBSERVACIONES: Usa alternativa condicional para elegir el mínimo entre dos valores
+    */
+    return(choose expresión1 when (expresión1 < expresión2)
+                  expresión2 otherwise)
+}
+
+function máximoEntre_Y_(expresión1, expresión2){
+    /*
+    PROPÓSITO: Indica cuál es el máximo entre las expresiones **expresion1** y
+                    **expresion2**
+    PRECONDICIONES: **expresión1** y **expresión2** deben ser del mismo tipo
+                    **expresión1** y **expresión2** no deben ser iguales
+    TIPO: Booleano
+    OBSERVACIONES: Usa alternativa condicional para elegir el máximo entre dos valores
+    */
+    return(choose expresión1 when (expresión1 > expresión2)
+                  expresión2 otherwise)
+}
+
+function distanciaAlBorde_(direcciónAPoner){
+    /*
+    PROPÓSITO: describe la cantidad de celdas que hay entre la celda actual 
+                    y el borde **direcciónAPoner**
+    PRECONDICIONES: Ninguna
+    TIPO: Número
+    PARÁMETROS : direcciónAPoner : Dirección -la dirección del borde hacia donde contar
+    */
+    cantidadDeCeldasYaVistas := 0
+    while(puedeMover(direcciónAPoner)){
+        cantidadDeCeldasYaVistas := cantidadDeCeldasYaVistas + 1
+        Mover(direcciónAPoner)
+    }
+    return(cantidadDeCeldasYaVistas)
+}
+
+function coordenadaX(){
+    /*
+    PROPÓSITO: Describe el número de la coordenada x desde la celda actual
+    PRECONDICIONES: Ninguna
+    TIPO: Número
+    */
+    return(distanciaAlBorde_(Oeste))
+}
+
+function coordenadaY(){
+    /*
+    PROPÓSITO: Describe el número de la coordenada y desde la celda actual
+    PRECONDICIONES: Ninguna
+    TIPO: Número
+    */
+    return(distanciaAlBorde_(Sur))
+}
+
+function nroFilas(){
+    /*
+    PROPÓSITO: Describe la cantidad de número de filas que hay en el tablero
+    PRECONDICIONES: Ninguna
+    TIPO: Número
+    */
+    IrAPrimeraCeldaEnUnRecorridoAl_Y_(Este, Norte)
+    return(distanciaAlBorde_(Norte) +1)
+}
+
+function nroColumnas(){
+    /*
+    PROPÓSITO: Describe la cantidad de número de columnas que hay en el tablero
+    PRECONDICIONES: Ninguna
+    TIPO: Número
+    */
+    IrAPrimeraCeldaEnUnRecorridoAl_Y_(Este, Norte)
+    return(distanciaAlBorde_(Este) +1)
+}
+
+function nroVacías(){
+    /*
+    PROPÓSITO: Describe la cantidad de celdas vacías que hay en el tablero
+    PRECONDICIONES: Ninguna
+    TIPO: Número
+    */
+    celdasVacíasYaVistas := 0
+    IrAPrimeraCeldaEnUnRecorridoAl_Y_(Este, Norte)
+    while(haySiguienteCeldaEnUnRecorridoAl_Y_(Este, Norte)){
+        celdasVacíasYaVistas := celdasVacíasYaVistas + unoSi_ceroSiNo(esCeldaVacía())
+        IrASiguienteCeldaEnUnRecorridoAl_Y_(Este, Norte)
+    }
+    return(celdasVacíasYaVistas + unoSi_ceroSiNo(esCeldaVacía()))
+}
+
+function cantidadDeCeldasConBolitasDeColor_(colorAPoner){
+    /*
+    PROPÓSITO: describe la cantidad de celdas que contienen al menos una bolita del 
+                    color **colorAPoner**
+    PRECONDICIONES: Ninguna
+    TIPO: Número
+    OBSERVACIONES: Recorrido por celdas de acumulación de celdas que contengan una bolita
+                        de color **colorAPoner**
+    */
+    IrAPrimeraCeldaEnUnRecorridoAl_Y_(Este, Norte)
+    celdasConBolitasDelColorDado := 0
+    while(haySiguienteCeldaEnUnRecorridoAl_Y_(Este, Norte)){
+        celdasConBolitasDelColorDado := celdasConBolitasDelColorDado + unoSi_ceroSiNo(hayBolitas(colorAPoner))
+        IrASiguienteCeldaEnUnRecorridoAl_Y_(Este, Norte)
+    }
+    return(celdasConBolitasDelColorDado + unoSi_ceroSiNo(hayBolitas(colorAPoner)))
+}
+
+function nroBolitasTotalDeColor_(colorAPoner){
+    /*
+    PROPÓSITO: Describe la cantidad de bolitas del color
+                    **colorAPoner** que hay en total en todo el tablero
+    PRECONDICIONES: Ninguna
+    TIPO: Número
+    PARÁMETROS: colorAPoner : color -el color a contar
+    OBSERVACIONES: Recorrido por celdas de acumulación de bolitas de color **colorAPoner**
+    */
+    IrAPrimeraCeldaEnUnRecorridoAl_Y_(Este, Norte)
+    celdasConBolitasDelColorDado := 0
+    while(haySiguienteCeldaEnUnRecorridoAl_Y_(Este, Norte)){
+        celdasConBolitasDelColorDado := celdasConBolitasDelColorDado + nroBolitas(colorAPoner)
+        IrASiguienteCeldaEnUnRecorridoAl_Y_(Este, Norte)
+    }
+    return(celdasConBolitasDelColorDado + nroBolitas(colorAPoner))
+}
+
+function unoSi_ceroSiNo(condiciónAPoner){
+    /*
+    PROPÓSITO: describe 1 cuando se cumple una
+                    condición o cero en caso contrario
+    PRECONDICIONES: Ninguna
+    TIPO: Número
+    OBSERVACIONES: Usa alternativa en expresiones condicional
+    */
+    return(choose 1 when (condiciónAPoner)
+                  0 otherwise)
+}

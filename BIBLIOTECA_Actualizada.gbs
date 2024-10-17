@@ -1,0 +1,431 @@
+// TP 2
+
+//
+function esCeldaVacia() {
+    /*Proposito: indica que en la celda actual no hay bolitas de ningun color
+    
+    Precondicion: ninguna
+    
+    Tipo: Booleano */
+    return (not hayBolitas(Azul) && not hayBolitas(Negro) && not hayBolitas(Rojo) && not hayBolitas(Verde))
+} 
+
+
+//3 a
+// BIBLIOTECA
+procedure PonerUnaDeCada(){
+    /*proposito: Poner una bolita de cada color en la celda actual
+    precondicion: ninguna*/
+    Poner(Azul)
+    Poner(Negro)
+    Poner(Rojo)
+    Poner(Verde)
+}
+
+
+// TP 4
+
+// 9
+// BIBLIOTECA
+procedure Poner_DeColor_(cantidadAPoner, colorAPoner){
+    /*Proposito: poner **cantidadAPoner** bolitas de color **colorAPoner** en la celda
+    actual
+
+    Parametros: *cantidadAPoner, Numero, es la cantidad de bolitas del color dado a poner
+    *colorAPoner, Color, es el color de la bolitas a poner
+
+    Precondicion: ninguna */
+    repeat(cantidadAPoner){
+        Poner(colorAPoner)
+    }
+}
+
+
+// 10
+// BIBLIOTECA
+procedure Mover_VecesAl_(cantidadAMover, direccionAMover){
+    /*Proposito: mover **cantidadAMover** veces hacia el **direccionAMover**. EL cabezal
+    termina **cantidadAMover** celdas hacia el **direccionAMover**
+
+    Parametros: *cantidadAMover, Numero, es la cantidad de veces a mover el cabezal 
+    *direccionAMover, Direccion, es la direccion hacia donde mover el cabezal 
+
+    Precondicion: deben haber **cantidadAMover** celdas hacia el **direccionAMover**
+    desde la celda actual */
+    repeat (cantidadAMover){
+        Mover(direccionAMover)
+    }
+}
+
+
+// 11
+// BIBLIOTECA
+procedure Sacar_DeColor_(cantidadASacar, colorASacar){
+    /*Proposito: sacar **cantidadASacar** bolitas de color **colorASacar** en la celda actual
+
+    Parametros: *cantidadASacar, Numero, es la cantidad de bolitas del color dado a sacar 
+    *colorASacar, Color, es el color de las bolitas a sacar
+
+    Precondicion: deben haber **cantidadASacar** bolitas de color **colorASacar** */
+    repeat (cantidadASacar){
+        Sacar(colorASacar)
+    }
+}
+
+
+// 12
+//BIBLIOTECA
+procedure IrAEsquinaAl_Y_(primeraDireccion, segundaDireccion){
+    /*Proposito: dirigirse hacia la esquina en direccion al **primeraDireccion** y **segundaDireccion** 
+
+    Parametros: 
+    -*primeraDireccion, Direccion, es la primera direccion que conforma la esquina 
+    -*segundaDireccion, Direccion, es la segunda direccion que conforma la esquina
+
+    Precondicion: las direcciones **primeraDireccion** y **segundaDireccion** no deben
+    ser opuestas ni iguales*/
+    IrAlBorde(primeraDireccion)
+    IrAlBorde(segundaDireccion)
+}
+
+
+
+// TP 5
+
+// 6
+// BIBLIOTECA
+procedure SacarTodasLasDeColor_(colorASacar){
+    /*Proposito: sacar todas las bolitas del color **colorASacar** de la celda actual
+    
+    Precondicion: deben existir bolitas del color dado en la celda actual */
+    repeat(nroBolitas(colorASacar)){  // repetir segun el numero de bolitas del color dado 
+        Sacar(colorASacar)
+    }
+}
+
+
+// 7
+// BIBLIOTECA
+procedure VaciarCelda(){
+    /*Proposito: vaciar la celda actual de todas las bolitas de todos los colores 
+
+    Precondicion: ninguna */ // ninguna ya que pueden no haber bolitas de ningun color
+    SacarTodasLasDeColor_(Azul)
+    SacarTodasLasDeColor_(Negro)
+    SacarTodasLasDeColor_(Rojo)
+    SacarTodasLasDeColor_(Verde)
+}
+
+
+
+// TP 6
+
+// 4.a
+// BIBLIOTECA
+procedure Poner_Si_(color, condicion){
+    /*Proposito: poner una bolita del color **color** si la condicion **condicion** se cumple
+
+    Parametros: *color, Color, es el color de la bolita a poner si se cumple la condicion dada
+    *condicion, Booleano, es la condicion a cumplir para poner una bolita del color dado
+
+    Precondicion: ninguna (depende cual sea la condicion) */
+    if(condicion){
+        Poner(color)
+    }
+}
+
+
+
+// 4.b
+// BIBLIOTECA
+procedure Sacar_Si_(color, condicion){
+    /*Proposito: sacar una bolita del color **color** si la condicion **condicion** se cumple
+
+    Parametros: *color, Color, es el color de la bolita a sacar si se cumple la condicion dada
+    *condicion, Booleano, es la condicion a cumplir para sacar una bolita del color dado
+    
+    Precondicion: ninguna (depende cual sea la condicion) */
+    if(condicion){
+        Sacar(color)
+    }
+}
+
+
+
+procedure Mover_Si_(dirección, condición){
+    /*Proposito: mover una celda al **direccion** si la condicion **condicion** se cumple. El cabezal termina una celda al **direccion** 
+    
+    Parametros: *direccion, Direccion, es la direccion hacia la que se mueve el cabezal
+    *condicion, Booleano, es la condicion a cumplir para poder mover el cabezal 1 celda hacia la direccion dada 
+    
+    Precondicion: debe haber 1 celda hacia el **direccion** si la condicion **condicion** se cumple */
+    if(condicion){
+        Mover(direccion)
+    }
+}
+
+// TP 8
+
+// 6.a BIBILOTECA
+procedure IrAPrimeraCeldaEnUnRecorridoAl_Y_(dirPrincipal, dirSecundaria){
+    /*Proposito: ir a la primera celda en un recorrido al **dirPrincipal** y al **dirSecundaria** 
+    
+    Parametros:
+    *dirPrincipal, Direccion, es la direccion principal del recorrido
+    *dirSecundaria, Direccion, es la direccion secundaria del recorrido
+    
+    Precondicion: las direcciones **dirPrincipal** y **dirSecundaria** no deben ser opuestas ni iguales 
+    */
+    IrAlBorde(dirPrincipal)
+    IrAlBorde(dirSecundaria)
+}
+
+// 6.b BIBILOTECA
+function haySiguienteCeldaEnUnRecorridoAl_Y_(dirPrincipal, dirSecundaria){
+    /*Proposito: indica si en el recorrido hay una celda al **dirPrincipal** y al **dirSecundaria** 
+    
+    Parametros:
+    *dirPrincipal, Direccion, es la direccion principal a indicar si hay
+    *dirSecundaria, Direccion, es la direccion secundaria a indicar si hay
+    
+    Precondicion: las direcciones **dirPrincipal** y **dirSecundaria** no deben ser opuestas ni iguales 
+    
+    Tipo: Booleano */
+    return(puedeMover(dirPrincipal) || puedeMover(dirSecundaria))
+}
+
+// 6.c BIBILOTECA
+procedure IrASiguienteCeldaEnUnRecorridoAl_Y_(dirPrincipal, dirSecundaria){
+    /*Procedure : mover el cabezal a la siguiente celda en un recorrido al **dirPrincipal** y al
+    **dirSecundaria** 
+    
+    Parametros:
+    *dirPrincipal, Direccion, es la direccion principal hacia donde mover el cabezal
+    *dirSecundaria, Direccion, es la direccion secundaria hacia donde mover el cabezal 
+    
+    Precondicion: las direcciones **dirPrincipal** y **dirSecundaria** no deben ser opuestas ni iguales */
+    if(puedeMover(dirPrincipal)){
+        Mover(dirPrincipal)
+    }else{
+        IrAlBorde(opuesto(dirPrincipal))
+        Mover(dirSecundaria)
+    }
+}
+
+
+
+
+// TP 9
+
+
+
+// 2 BIBLIOTECA
+function hayBolitas_Al_(colorDeBolita, direccion){
+    /*Proposito: indica si hay bolitas de color **colorDeBolita** en la celda lindante al
+    **direccion** 
+    
+    Parametros:
+    *colorDeBolita, Color, es el color de las bolitas a indicar si hay
+    
+    *direccion, Direccion, es la direccion de la celda linante en 
+    la que indicar si hay bolitas de color **colorDeBolita**
+    
+    Precondicion: ninguna 
+    
+    Observacion: si no existe dicha celda lindante en la direccion dada la funcion describe falso
+    
+    Tipo: Booleano */
+    if(puedeMover(direccion)){
+        Mover(direccion)
+    }
+    return(hayBolitas(colorDeBolita))
+}
+
+
+// 8 BIBLIOTECA
+procedure CopiarCeldaAl_(direccionACopiar){
+    /*Proposito: copiar el contenido de la celda actual en la lindante al **direccionACopiar** 
+    
+    Parametro:*direccionACopiar, Direccion, es la direccion de la celda lindante 
+    
+    Precondicion: 
+    -debe exister dicha celda lindante al **direccionACopiar** 
+    -la celda lindante debe estar vacia para copiar exactamente el contenido de la actual
+    
+    */
+    cantidadDeBolitasAzul := nroBolitas(Azul)
+    cantidadDeBolitasNegro := nroBolitas(Negro)
+    cantidadDeBolitasRojo := nroBolitas(Rojo)
+    cantidadDeBolitasVerde := nroBolitas(Verde)
+    Mover(direccionACopiar)
+    VaciarCelda()
+    Poner_DeColor_(cantidadDeBolitasAzul, Azul)
+    Poner_DeColor_(cantidadDeBolitasNegro, Negro)
+    Poner_DeColor_(cantidadDeBolitasRojo, Rojo)
+    Poner_DeColor_(cantidadDeBolitasVerde, Verde)
+}
+
+
+// 12 BIBLIOTECA
+function mínimoEntre_Y_(primerValor, segundoValor){
+    /*Proposito: describe el valor mas chico entre el valor **primerValor** y el valor **segundoValor** 
+    
+    Parametros: 
+    *primerValor, Cualquier tipo, es el primer valor a elegir 
+    *segundoValor, Cualquier tipo, es el segundo valor a elegir 
+    
+    Precondicion: 
+    *tanto el valor **primerValor** como el valor **segundoValor** deben ser del mismo tipo para que no haya errores de tipo
+    
+    Observacion: puede hacerse una comparacion entre direcciones, colores y numero, pero no puede ser una comparacion del estilo
+    direccion-numero,  color-direccion, ya que los tipos no tienen relacion
+
+    Tipo: Cualquier tipo */
+    return(choose primerValor when(primerValor < segundoValor)
+                segundoValor otherwise)
+}
+
+
+// 13 BIBLIOTECA
+function maximoEntre_Y_(primerValor, segundoValor){
+    /*Proposito: describe el valor mas grande entre el valor **primerValor** y el valor **segundoValor** 
+    
+    Parametros: 
+    *primerValor, Cualquier tipo, es el primer valor a elegir 
+    *segundoValor, Cualquier tipo, es el segundo valor a elegir 
+    
+    Precondicion: 
+    *tanto el valor **primerValor** como el valor **segundoValor** deben ser del mismo tipo para que no haya errores de tipo
+    
+    Observacion: puede hacerse una comparacion entre direcciones, colores y numero, pero no puede ser una comparacion del estilo
+    direccion-numero,  color-direccion, ya que los tipos no tienen relacion
+
+    Tipo: Cualquier tipo */
+    return(choose primerValor when(primerValor > segundoValor)
+                segundoValor otherwise)
+}
+
+
+// 18 BIBLIOTECA
+function distanciaAlBorde_(direccionDelBorde){
+    /*Proposito: describe la cantidad de celdas desde la actual hasta el borde **direccionDelBorde** 
+    
+    Parametro: *direccionDelBorde, Direccion, es la direccion del borde
+    
+    Precondicion: ninguna 
+    
+    Observacion: en caso de que el cabezal se encuentre sobre el borde **direccionDelBorde** 
+    la distancia seria 0
+    
+    Tipo: Numero */
+    cantidadDeCeldasDeDistancia := 0 
+    while(puedeMover(direccionDelBorde)){
+        cantidadDeCeldasDeDistancia := cantidadDeCeldasDeDistancia + 1
+        Mover(direccionDelBorde)
+    }
+    return(cantidadDeCeldasDeDistancia)
+}
+
+
+
+// 20 BIBLIOTECA
+function nroFilas(){
+    /*Proposito: describe la cantidad de filas del tablero 
+    
+    Precondicion: ninguna
+    
+    Tipo: Numero */
+    IrAlBorde(Sur) // se mueve al borde sur, donde empieza la fila
+    cantidadDeFilasHastaAhora := 0
+    while(puedeMover(Norte)){ // meintras se mueva al Norte, ira hacia la otra columna 
+        cantidadDeFilasHastaAhora := cantidadDeFilasHastaAhora + 1 // cuenta 1 fila
+        Mover(Norte)
+    }
+    cantidadDeFilasHastaAhora := cantidadDeFilasHastaAhora + 1
+    return(cantidadDeFilasHastaAhora)
+}
+
+
+function nroColumnas(){
+    /*Proposito: describe la cantidadd de columnas del tablero 
+    
+    Precondicion: ninguna
+    
+    Tipo: Numero */
+    IrAlBorde(Norte) // se mueve al borde norte, donde empieza la columna
+    cantidadDeFilasHastaAhora := 0
+    while(puedeMover(Este)){ // mientras se mueva al este
+        cantidadDeFilasHastaAhora := cantidadDeFilasHastaAhora + 1 // cuente 1 columna
+        Mover(Este)
+    }
+    cantidadDeFilasHastaAhora := cantidadDeFilasHastaAhora + 1
+    return(cantidadDeFilasHastaAhora)
+}
+
+// mientras se va al Norte se posiciona al cabezal en otra fila, en cambio si se va al Este desde el borde Norte
+// se posiciona al cabezal sobre otra columna
+
+// 21 BIBLIOTECA
+function nroVacias(){
+    /*Proposito: describe la cantidad de celdas vacias en el tablero 
+    
+    Precondicion: ninguna 
+    
+    Observacion: 
+    - una celda vacia se refiera a una celda que no contenga ninguna bolita
+    - es un recorrido de acumulacion sobre las celdas del tablero en el que se contabilizan las celdas
+    vacias
+    
+    Tipo: Numero */
+    IrAPrimeraCeldaEnUnRecorridoAl_Y_(Sur, Oeste) // iniciar recorrido imaginario (porque es una funcion)
+    cantidadDeCeldasVacias := 0 // iniciar contador, en 0 porque no sabemos si es celda vacia la actual
+    while(haySiguienteCeldaEnUnRecorridoAl_Y_(Este, Norte)){ // verificar elemento a procesar
+        cantidadDeCeldasVacias := cantidadDeCeldasVacias + unoSi_CeroSiNo(esCeldaVacia()) // procesar elemento actual ( importante asi en cada iteracion procesa cada celda ) 
+        IrASiguienteCeldaEnUnRecorridoAl_Y_(Este, Norte)
+    }
+    cantidadDeCeldasVacias := cantidadDeCeldasVacias + unoSi_CeroSiNo(esCeldaVacia()) // finalizar recorrido 
+    return(cantidadDeCeldasVacias)
+}
+
+// si no se pone el procesar elemento actual solo estaria contando la ultima celda del tablero y no las demas
+
+
+
+// 23 BIBLIOTECA
+
+// Forma 1 de resolver, usando directamente nroBolitas
+function nroBolitasTotalDeColor_(colorDeBolita){
+    /*Proposito: describe la cantidad de bolitas totales de color **colorDeBolita** en el tablero 
+    
+    Parametro: *colorDeBolita, Color, es el color de la bolita a contar 
+    
+    Precondicion: ninguna
+    
+    Observacion: es un recorrido de acumulacion sobre las celdas del tablero, contando cada bolita
+    del color dado
+    
+    Tipo: Numero */
+    IrAPrimeraCeldaEnUnRecorridoAl_Y_(Sur, Oeste) // iniciar recorrido
+    cantidadDeBolitasDeColorDadoVistas := 0 // iniciar contador 
+    while(haySiguienteCeldaEnUnRecorridoAl_Y_(Este, Norte)){ // verificar elemento a procesar
+        cantidadDeBolitasDeColorDadoVistas := cantidadDeBolitasDeColorDadoVistas + nroBolitas(colorDeBolita)// procesar elemento actual, sumarle 1 a la variable si es celda con bolita del color dado
+        IrASiguienteCeldaEnUnRecorridoAl_Y_(Este, Norte) // ir a siguiente elemento a procesar
+    }
+    cantidadDeBolitasDeColorDadoVistas := cantidadDeBolitasDeColorDadoVistas + nroBolitas(colorDeBolita) // finalizar recorrido
+    return(cantidadDeBolitasDeColorDadoVistas) // si aca pusiese nroBolitas(colorDeBolita), sumaria uno de mas
+}
+
+
+
+// 26 BIBLIOTECA
+function unoSi_CeroSiNo(condicion){
+    /*Proposito: describe 1 si la condicion **condicion** es cumplida o 0 en caso contrario 
+    
+    Parametro: *condicion, Booleano, es la condicion a cumplir 
+    
+    Precondicion: ninguna 
+    
+    Tipo: Numero */
+    return(choose 1 when(condicion)
+                0 otherwise)
+}
