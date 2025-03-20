@@ -1,0 +1,5 @@
+program {
+    Sacar(Negro)
+    Mover(Este)
+    Poner(Negro)
+}

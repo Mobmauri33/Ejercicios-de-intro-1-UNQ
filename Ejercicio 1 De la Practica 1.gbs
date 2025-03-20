@@ -1,0 +1,4 @@
+program {
+    Sacar(Rojo)
+    Poner(Verde)
+}
