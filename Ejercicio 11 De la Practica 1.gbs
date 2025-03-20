@@ -1,0 +1,25 @@
+program {
+    /*PROPOSITO:saca del tablero un cuadrado multicolor de dos celdas de lado
+    PRECONDICION: Debe haber 1 bolita de cada color en todas las celdas */ 
+    Sacar(Azul)
+    Sacar(Negro)
+    Sacar(Rojo)
+    Sacar(Verde)
+    Mover(Norte)
+    Sacar(Azul)
+    Sacar(Negro)
+    Sacar(Rojo)
+    Sacar(Verde)
+    Mover(Este)
+    Sacar(Azul)
+    Sacar(Negro)
+    Sacar(Rojo)
+    Sacar(Verde)
+    Mover(Sur)
+    Sacar(Azul)
+    Sacar(Negro)
+    Sacar(Rojo)
+    Sacar(Verde)
+    Mover(Oeste)
+    
+}

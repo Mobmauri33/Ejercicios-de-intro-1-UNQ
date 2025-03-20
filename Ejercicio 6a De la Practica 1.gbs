@@ -1,0 +1,22 @@
+program {
+    /*PROPOSITO:pone un cuadrado de tamaño 3 con bolitas de color verde*/
+    Poner(Verde)
+    Mover(Sur)
+    Poner(Verde)
+    Mover(Oeste)
+    Poner(Verde)
+    Mover(Norte)
+    Poner(Verde)
+    Mover(Norte)
+    Poner(Verde)
+    Mover(Este)
+    Poner(Verde)
+    Mover(Este)
+    Poner(Verde)
+    Mover(Sur)
+    Poner(Verde)
+    Mover(Sur)
+    Poner(Verde)
+    Mover(Oeste)
+    Mover(Norte)
+}
