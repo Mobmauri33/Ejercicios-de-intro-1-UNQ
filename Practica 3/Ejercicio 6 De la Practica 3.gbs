@@ -1,0 +1,63 @@
+program {
+   /* PROPÓSITO: Dibuja un tablero azul.
+PRECONDICIONES:Debe haber 9 celdas inmediatas desde la celda actual hacia la direccion Este y 6 celdas inmediatas hacia la direccion Norte.
+*/
+    PintarElTableroDeAzul()
+}
+
+
+
+procedure PintarElTableroDeAzul() {
+/*
+PROPÓSITO: Pone un rectángulo sólido de color azul de 10 celdas de ancho y 7 celdas de alto. Desde la celda actual hacia la direccion Este y hacia la direccion Norte.
+PRECONDICIONES:
+* Hay al menos 9 celdas inmediatas hacia la direccion Este y 6 celdas inmediatas hacia la direccion Norte de la celda actual.
+* Las celdas contenidas en el tablero están vacías.
+*/
+repeat (6) {
+DibujarLineaAzulHaciaElEste()
+Mover(Norte)
+    }
+    DibujarLineaAzulHaciaElEste()
+    Mover6VecesAlSur()
+}
+
+
+procedure DibujarLineaAzulHaciaElEste() {
+    /*PROPOSITO: Dibuja una linea horizontal azul
+    PRECONDICIONES:
+    *Hay al menos 9 celdas inmediatas hacia la direccion este
+    *la celdas estan vacias.
+    */
+    repeat (9) {
+    PonerUnaAzul()
+    Mover(Este)
+    }
+    PonerUnaAzul()
+    Mover9VecesAlOeste()
+}
+
+procedure PonerUnaAzul() {
+    /* PROPOSITO: Pone una Bolita Azul en la celda actual.
+    PRECONDICION: la Celda actual tiene que estar Vacia.
+    */
+    Poner(Azul)
+}
+
+procedure Mover9VecesAlOeste() {
+    /*PROPOSITO: Posiciona el cabezal a donde comenzo la linea de bolitas.
+    PRECONDICION: Debe haber al menos 8 celdas inmediatas hacia la direccion Oeste.
+    */
+    repeat (9) {
+    Mover(Oeste)
+    }
+}
+
+procedure Mover6VecesAlSur() {
+    /*PROPOSITO: Posiciona el cabezal a donde comenzo del programa.
+    PRECONDICION: Debe haber al menos 6 celdas inmediatas hacia la direccion Sur.
+    */
+    repeat (6) {
+    Mover(Sur)
+    }
+}
