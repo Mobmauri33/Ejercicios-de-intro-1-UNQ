@@ -1,0 +1,14 @@
+program {
+    /*PROPOSITO: invoca a un procedimiento que mueve el cabezal tres posiciones en direccion hacia el Oeste de la celda actual.
+    PRECONDICION: Tener almenos 3 celdas lindantes hacia el oeste.
+    */
+    Mover3VecesAlOeste()
+}
+procedure Mover3VecesAlOeste() {
+    /*PROPOSITO: mueve el cabezal tres posiciones en direccion hacia el Oeste de la celda actual.
+    PRECONDICION: Tener almenos 3 celdas lindantes hacia el oeste.
+    */
+    repeat (3) {
+        Mover(Oeste)
+    }
+}
