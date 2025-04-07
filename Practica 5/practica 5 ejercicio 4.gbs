@@ -1,0 +1,51 @@
+program {
+    /* PROPOSITO: Dibuja una banda diagonal de color Rojo de cuatro celdas de alto y de tantas celdas de largo como indique el parámetro **ancho**.
+    PRECONDION: Desde la celda actual deben haber al menos **ancho** de celdas hacia la direccion diagonal Noreste.
+    PARAMETROS:
+    *ancho - ancho - celdas de ancho de la banda roja.
+    */
+    DibujarLaBandaGloriosaDeAncho_(7)
+}
+
+procedure DibujarLaBandaGloriosaDeAncho_(ancho) {
+    /*PROPOSITO: Dibuja una banda diagonal de color Rojo de cuatro celdas de alto y de tantas celdas de largo como indique el parámetro **ancho**.
+    PRECONDION: Desde la celda actual deben haber al menos **ancho** de celdas hacia la direccion diagonal Noreste.
+    PARAMETROS:
+    *ancho - ancho - celdas de ancho de la banda roja.
+    */
+    Dibujar4LineasRojas(ancho)
+}
+procedure DibujarLineaRoja(ancho) {
+    repeat(ancho -1){
+        Poner(Rojo)
+        Mover(Norte)
+        Mover(Este)
+    }
+    Poner(Rojo)
+    IrALPrincipioDeLaLinea(ancho)
+    PasarALaSiguienteLinea()
+    
+}
+
+procedure IrALaCeldaInicial() {
+    IrAlBorde(Sur)
+    IrAlBorde(Oeste)
+}
+
+procedure PasarALaSiguienteLinea() {
+    Mover(Norte)
+}
+
+procedure IrALPrincipioDeLaLinea(ancho) {
+    repeat(ancho-1) {
+        Mover(Oeste)
+        Mover(Sur)
+    }
+}
+
+procedure Dibujar4LineasRojas(ancho) {
+    repeat(4) {
+        DibujarLineaRoja(ancho)
+    }
+    IrAlBorde(Sur)
+}

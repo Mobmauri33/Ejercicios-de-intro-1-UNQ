@@ -1,0 +1,20 @@
+program {
+    /*PROPOSITO: el programa llama a un procedimiento llamado Mover_SegúnColor_() con los parametros direccion **direccionAMover** y color **colorElegido**, que mueve el cabezal en la dirección dada tantas celdas como bolitas de color dado hay en la celda actual.
+    PRECONDICION: Que desde la celda actual haya la cantidad de celdas disponibles hacia la direccion dada, segun el color elegido en la celda actual.
+    PARAMETROS:
+    *direccion - direccionAMover - direccion en el que se va a mover el cabezal
+    *color - colorElegido - color elegido en la celda actual.
+    */
+    Mover_SegúnColor_(Norte, Rojo)
+}
+procedure Mover_SegúnColor_(direccionAMover, colorElegido) {
+    /*PROPOSITO: mueve el cabezal en la dirección dada tantas celdas como bolitas de color dado hay en la celda actual.
+    PRECONDICION: Que desde la celda actual haya la cantidad de celdas disponibles hacia la direccion dada, segun el color elegido en la celda actual.
+    PARAMETROS:
+    *direccion - direccionAMover - direccion en el que se va a mover el cabezal
+    *color - colorElegido - color elegido en la celda actual.
+    */
+    repeat(nroBolitas(colorElegido)) {
+        Mover(direccionAMover)
+    }
+}
