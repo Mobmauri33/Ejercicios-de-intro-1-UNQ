@@ -1,0 +1,90 @@
+program {
+    IrAPrimeraCeldaEnUnRecorridoAl_Y_(Norte, Oeste)
+    PintarTableroDe_(Rojo)
+    //IrASiguienteCeldaEnUnRecorridoAl_Y_(Oeste, Sur)
+}
+
+/* ejercicio 6*/
+/*6. Las subtareas más útiles de la historia
+BIBLIOTECA Escribir los procedimientos y funciones necesarias para generalizar la noción de recorrido
+por celdas de un tablero, para que las direcciones de recorrido no estén fijas. En particular, definir
+(como siempre, comenzando por los contratos):
+a. IrAPrimeraCeldaEnUnRecorridoAl_Y_(dirPrincipal, dirSecundaria)
+b. haySiguienteCeldaEnUnRecorridoAl_Y_(dirPrincipal, dirSecundaria)
+c. IrASiguienteCeldaEnUnRecorridoAl_Y_(dirPrincipal, dirSecundaria)
+Que hacen precisamente lo que sugiere su nombre, permitiendo utilizarlas en un recorrido por celdas.
+Puede probarlas intentando colocar una bolita en cada celda del tablero, o volviendo a implementar el
+ejercicio anterior, ahora de forma parametrizada. Al escribir las precondiciones, tener en cuenta que las
+direcciones no pueden ser cualesquiera, sino que deben estar relacionadas. ¿Cuál es esa relación?
+¿Cómo expresarla? */
+
+//a.
+procedure IrAPrimeraCeldaEnUnRecorridoAl_Y_(dirPrincipal, dirSecundaria) {
+    /*PROPOSITO:Posiciona el cabezal en la primera celda de un recorrido.
+    PRECONDICION: Las direcciones no puede iguales ni opuestas.
+    PARAMETROS: *dirPrincipal - tipo direccion - direccion principal en donde ubicar el cabezal.
+    *dirSecundaria - tipo direccion - direccion secundaria en donde ubicar el cabezal.
+    */
+    while (puedeMover(dirPrincipal)) {
+        Mover(dirPrincipal)
+    }
+    while (puedeMover(dirSecundaria)) {
+        Mover(dirSecundaria)
+    }
+    
+}
+
+
+//b.
+//function haySiguienteCeldaEnUnRecorridoAl_Y_(dirPrincipal, dirSecundaria) {
+    /*PROPOSITO: Indica si hay siguiente celda para poder mover el cabezal para iniciar un recorrido.
+    PRECONDICION: Las direcciones no puede iguales ni opuestas.
+    PARAMETROS: *dirPrincipal.
+    *dirSecundaria.
+    TIPOS *dirPrincipal - tipo direccion - direccion principal en donde ubicar el cabezal.
+    *dirSecundaria - tipo direccion - direccion secundaria en donde ubicar el cabezal.
+    return(haySiguienteCeldaEnUnRecorridoAl_Y_(dirPrincipal, dirSecundaria))
+} */
+//c.
+//procedure IrASiguienteCeldaEnUnRecorridoAl_Y_(dirPrincipal, dirSecundaria) {
+    /*PROPOSITO:Mueve el cabezal a la siguiente celda en un recorrido.
+    PRECONDICION: Debe haber una celda lindante en direccion dada de la celda actual.
+    PARAMETROS: *dirPrincipal - tipo direccion - direccion principal a donde mover el cabezal a la siguiente celda en un recorrido.
+    *dirSecundaria - tipo direccion - direccion secundaria a donde mover el cabezal a la siguiente celda en un recorrido.
+    */
+ /*   while (haySiguienteCeldaEnUnRecorridoAl_Y_(dirPrincipal, dirSecundaria)) {
+        Mover(dirPrincipal)
+        Mover(dirSecundaria)
+    }
+}
+*/
+/*ejercicio 7*/
+
+/*7. Y ahora más cosas sobre el tablero Escribir ahora los siguientes procedimientos, teniendo en cuenta que para todos, el cabezal puede comenzar en cualquier lugar del tablero, y terminar en dónde usted crea conveniente.
+a. PintarTableroDe_(color) que coloca exactamente una bolita del color dado en cada
+celda del tablero.
+b. PonerUnaDeCadaEnTodoElTablero() que coloca una bolita de cada color en cada celda del tablero.
+c. RellenarCon_EnAusenciaDe_EnElTablero(colorAPoner, colorAMirar) que coloca una bolita de color colorAPoner en cada celda del tablero en la que no haya al menos una bolita de color colorAMirar.
+d. CompletarHasta_De_EnElTablero(cantidad, color) que deja en cada celda del
+tablero exactamente tantas bolitas del color dado como la cantidad indicada por el parámetro cantidad. Note que puede que ya existan bolitas del color dado en algunas de las celdas (pero no más de **cantidad** en ninguna). Realice el procedimiento sin hacer uso del comando Sacar ni ninguno de los procedimientos que implican Sacar. */
+
+//a.
+procedure PintarFilaDe_(color){
+    /*PROPOSITO: coloca exactamente una bolita del color dado en cada
+celda de la fila actual.
+PRECONDICION: -.
+PARAMETROS: *color - tipo color - color de bolita a poner. */
+while(puedeMover(Este)){
+    Poner(color)
+    }
+}
+
+procedure PintarTableroDe_(color) {
+    /*PROPOSITO: coloca exactamente una bolita del color dado en cada
+celda del tablero.
+PRECONDICION: -.
+PARAMETROS: *color - tipo color - color de bolita a poner. */
+    while (puedeMover(Norte)) {
+        PintarFilaDe_(color)
+    }
+}
