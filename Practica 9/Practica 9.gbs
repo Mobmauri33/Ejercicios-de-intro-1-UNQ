@@ -1,0 +1,74 @@
+program {
+    //hayBolitas_EnCeldaAl_(Rojo, Oeste)
+    CopiarCeldaAl_(Norte)
+}
+//ejercicio 1
+//function hayBolitas_EnCeldaAl_(colorDeBolita, direccion) {
+    /*PROPOSITO: Indica si hay una celda lindante en la
+dirección dada, indica si la misma tiene o no bolitas del color indicado Sí no hay una celda lindante, hace BOOM.
+PRECONDICION:Debe haber una celda lindante en la direccion dada. 
+PARAMETROS:
+*colorDeBolita -color- color de la bolita elegida para censar en la celda lindante.
+*direccion -direccion- direccion de la celda lindante que voy a censar.
+TIPO: Booleano *//*
+    if (puedeMover(direccion)) {
+        Mover(direccion)
+        else {
+            Mover(direccion)
+        }
+    }
+    if(hayBolitas(colorDeBolita)) {
+        Mover(opuesto(direccion))
+        Poner(Verde)
+        else {
+            Poner(Rojo)
+        }
+        
+    }
+    return( hayBolitas(colorDeBolita) &&puedeMover(direccion))
+}*/
+//ejercicio 2
+
+//function hayBolitas_Al_(colorDeBolita, direccion) {
+    /*PROPOSITO: Indica si hay una celda lindante en la
+dirección dada, indica si la misma tiene o no bolitas del color indicado Síno describe False.
+PRECONDICION:ninguna.
+PARAMETROS:
+*colorDeBolita -color- color de la bolita elegida para censar en la celda lindante.
+*direccion -direccion- direccion de la celda lindante que voy a censar.
+TIPO: Booleano */
+//return(puedeMover(direccion) && hayBolitas_EnCeldaAl_(colorDeBolita, direccion))
+
+//ejercicio 8
+
+procedure CopiarCeldaAl_(direccion) {
+    /*PROPOSITO: copia los contenidos de la celda actual
+a la celda lindante en la dirección dada.
+PRECONDICION:Debe existir una celda lindante en direccion **direccion**.
+PARAMETROS:* direccion - direccion - direccion de la celda a copiar. */
+    cantAzul:= nroBolitas(Azul)
+    cantNegro:= nroBolitas(Negro)
+    cantRojo:= nroBolitas(Rojo)
+    cantVerde:= nroBolitas(Verde)
+    Mover(direccion)
+    VaciarlCelda()
+    Poner_DeColor_(cantAzul, Azul)
+    Poner_DeColor_(cantNegro, Negro)
+    Poner_DeColor_(cantRojo, Rojo)
+    Poner_DeColor_(cantVerde, Verde)
+}
+
+procedure VaciarlCelda(){
+    while(not hayBolitas(Azul) || not hayBolitas(Negro) || not hayBolitas(Rojo) || not hayBolitas(Verde)) {
+        Sacar(Azul)
+        Sacar(Negro)
+        Sacar(Rojo)
+        Sacar(Verde)
+    }
+}
+
+procedure Poner_DeColor_(cantidadDeBolitas, color) {
+    repeat(cantidadDeBolitas) {
+        Poner(color)
+    }
+}
