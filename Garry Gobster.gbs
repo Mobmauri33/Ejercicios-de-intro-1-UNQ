@@ -1,0 +1,25 @@
+//Ejercicio 1
+
+function puedenGanarBatallaMagosContraMortifagos (categoria) {
+    /*PROPÓSITO: Indica si los magos pueden derrotar a los mortifagos en una batalla.
+    PRECONDICIÓN: El poder mágico total de los magos (es decir, la suma de los poderes mágicos de todos los magos de Gobwarts en su conjunto) debe ser mayor que el poder mágico total de los mortifagos.
+    PARÁMETROS:* poderMagos: Número - Un número que representa el poder de los magos.
+    * poderMortifagos: Número - Un número que representa el poder de los mortifagos.
+    TIPO: Booleano
+    */
+    poderMagos:=0
+    poderMortifagos:=0
+    puedeGanarLosMagos:= False
+    if(categoria == categoriaMago()){
+        poderMagos:= poderMagos + poderMágicoDelPersonaje()
+    }
+    elseif (categoria == categoríaMortifago()){
+        poderMortifagos:= poderMortifagos + poderMágicoDelPersonaje()
+    }
+    if(poderMagos > poderMortifagos) {
+        puedeGanarLosMagos:= True
+    }
+)
+    return(puedeGanarLosMagos)
+    
+}
