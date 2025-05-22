@@ -1,0 +1,41 @@
+//ejercicio 1
+
+//ejercicio 5
+// Mis primeras personas
+//a.
+type Persona is record {
+    //Proposito: Modelar a las personas 
+    //Rep: DNI, domicilio y si es donante
+    
+    field dni // String
+    field domicilio // String
+    field esDonante // Booleano
+}
+//b.
+function sonConvivientes_Y_(persona1, persona2) {
+    //Proposito: Indicar si las personas dadas **persona1** y **persona2** son convivientes.
+    //Precondicion: Ninguna.
+    //Parametros:
+    //**persona1** - primera persona a indicar si convive con la persona2
+    //**persona2** - segunda persona a indicar si convive con la persona1
+    //Tipo: Booleano
+    return(domicilio(persona1)==domicilio(persona2))
+}
+//c.
+function personaNacidaDe_(personaMadre) {
+    //Proposito: describe a una nueva persona que haya nacido de la misma dada **personaMadre**.
+    //Parametros:
+    //**personaMadre - persona
+    //Tipo: persona
+    //Observaciones: la persona nacida convive con la madre, no tiene DNI asignado y en principio no es donante de órganos.
+    return (Persona (dni <- sinAsignar()
+    domicilio <- domicilio(personaMadre)
+    esDonante <- False)))
+}
+
+function sinAsignar() {
+    //Proposito: denota el string vacío
+    //Rep: dni sin asignar
+    
+    field " " // string
+}
